@@ -284,7 +284,7 @@ def page(path, title, desc, body, schema=None, og_type="website", crumbs=None, n
 <meta name="theme-color" content="#1f5eff">
 <link rel="icon" href="{root}assets/images/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{root}assets/images/apple-touch-icon.png">
-<link rel="stylesheet" href="{root}assets/css/style.css">
+<link rel="stylesheet" href="{root}assets/css/style.css?v=20261114-2">
 {jsonld(nodes)}
 </head>
 <body>
