@@ -973,3 +973,27 @@ p, li { font-size:1.04rem; }
  .studio-page:not(.home-page) .form-card label,
  .studio-page:not(.home-page) .field label { font-size:.95rem; }
 }
+
+
+/* Fix lime CTA label contrast: keep every green action label dark and readable. */
+.studio-page:not(.home-page) .btn-primary,
+.studio-page:not(.home-page) .btn-primary:link,
+.studio-page:not(.home-page) .btn-primary:visited,
+.studio-page:not(.home-page) .btn-primary:hover,
+.studio-page:not(.home-page) .btn-primary:focus,
+.studio-page:not(.home-page) .btn-fiverr,
+.studio-page:not(.home-page) .btn-fiverr:link,
+.studio-page:not(.home-page) .btn-fiverr:visited,
+.studio-page:not(.home-page) .btn-fiverr:hover,
+.studio-page:not(.home-page) .btn-fiverr:focus,
+.studio-page:not(.home-page) .page-hero .btn-primary,
+.studio-page:not(.home-page) .page-hero .btn-primary:hover {
+  color: #101820 !important;
+  -webkit-text-fill-color: #101820 !important;
+  text-shadow: none !important;
+}
+.studio-page:not(.home-page) .btn-primary *,
+.studio-page:not(.home-page) .btn-fiverr * {
+  color: #101820 !important;
+  -webkit-text-fill-color: #101820 !important;
+}
