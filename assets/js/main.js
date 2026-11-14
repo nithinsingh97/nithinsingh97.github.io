@@ -49,6 +49,27 @@
     items.forEach(function (el) { el.classList.add("in"); });
   }
 
+  // ---- Homepage motion: staggered reveals, with reduced-motion support ----
+  if (document.body.classList.contains("home-page")) {
+    var revealTargets = document.querySelectorAll(
+      ".premium-section-head, .premium-service-card, .review-card, .process-mini > div, .premium-cta-inner"
+    );
+    revealTargets.forEach(function (el) { el.classList.add("reveal"); });
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -35px 0px" });
+      revealTargets.forEach(function (el) { revealObserver.observe(el); });
+    } else {
+      revealTargets.forEach(function (el) { el.classList.add("in"); });
+    }
+  }
+
   // ---- Footer year ----
   var y = document.querySelectorAll("[data-year]");
   y.forEach(function (el) { el.textContent = new Date().getFullYear(); });
