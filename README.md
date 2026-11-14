@@ -31,7 +31,7 @@ Every page contains `https://nithinsingh97.github.io` (canonical tags, Open Grap
 **Easiest:** in VS Code press `Ctrl+Shift+H` (Replace in Files), search `nithinsingh97`, replace it with your GitHub username, then **Replace All**.
 
 ### B. Your contact email
-Search for `your-email@example.com` and replace it with your business email. Until you do, the contact form shows visitors an honest message and points them to Fiverr instead of pretending to send.
+Your business email is configured as `nithinsingh1997@gmail.com` in `_tools/build.py`. The contact form opens a prefilled email; visitors still press Send in their own email app.
 
 > If you use the Python generator (section 4), make these changes in `_tools/build.py` → `CONFIG` instead and rebuild.
 
@@ -85,7 +85,7 @@ python _tools/check_site.py   # verify links, anchors, metadata, schema, sitemap
 
 | To change… | Edit |
 |---|---|
-| Name, URLs, email, **order count / review count**, dates | `_tools/build.py` → `CONFIG` block (`ORDERS`, `REVIEWS`, …) |
+| Name, URLs, email, **order count / review count**, dates | `_tools/build.py` → `CONFIG` block (`ORDERS`, `REVIEWS`, `CONTACT_EMAIL`, …) |
 | Service pages | `_tools/content_services.py` |
 | Case studies | `_tools/content_cases.py` |
 | Blog articles | `_tools/content_blog.py` |
