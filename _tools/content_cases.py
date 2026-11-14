@@ -1,0 +1,156 @@
+# Case studies. Each becomes /case-studies/<slug>.html
+#
+# IMPORTANT: These describe the typical technical approach for each category of work.
+# Every client-specific detail (industry, volume, timeline, outcome) is a PLACEHOLDER
+# and is shown on the site with a yellow "Sample" marker. Replace the placeholder
+# values below with real, verifiable project details, then set "sample": False.
+
+PH = '<span class="ph">{}</span>'
+
+
+def ph(text):
+    return PH.format(text)
+
+
+CASES = [
+    {
+        "slug": "google-maps-business-data",
+        "category": "Google Maps business data extraction",
+        "title": "Building a Local Business Lead Database from Google Maps",
+        "short": "Planning location-by-location searches, extracting public business listings and deduplicating them into a single lead list.",
+        "service": "google-maps-data-extraction",
+        "sample": True,
+        "meta": {"Client industry": ph("Add industry"), "Region": ph("Add region"), "Records delivered": ph("Add verified count"), "Timeline": ph("Add timeline")},
+        "challenge": "The client needed a list of businesses in a specific category across a wide area. A single broad search returns only a limited number of results, so most businesses would be missed, and overlapping searches create duplicates.",
+        "approach": [
+            ("Search planning", "Split the target area into cities and postcodes (or map grid points for dense areas) and built one query per area and keyword combination."),
+            ("Extraction", "Used a Playwright-based browser workflow to load each search, scroll the results panel, and open each listing to capture the publicly displayed fields."),
+            ("Enrichment", "Visited each business website, where one was listed, to collect publicly published email addresses and social profile links."),
+            ("Cleaning", "Normalised phone numbers and addresses, then deduplicated on listing URL, phone and normalised name plus address."),
+            ("Delivery", "Delivered a sample for column approval, then the full Excel file with one row per business and a source URL for each."),
+        ],
+        "fields": ["Business name", "Category", "Address", "City / postcode", "Phone", "Website", "Rating", "Review count", "Maps URL", "Email (from website)"],
+        "tech": ["Python", "Playwright", "Pandas", "openpyxl"],
+        "outcome": ph("Add the real outcome, for example how the client used the list. Only include results the client has confirmed."),
+    },
+    {
+        "slug": "ecommerce-product-data",
+        "category": "E-commerce product data scraping",
+        "title": "Extracting a Complete Product Catalog with Variants and Images",
+        "short": "Mapping category trees, parsing embedded product JSON and delivering a variant-level catalog ready for import.",
+        "service": "ecommerce-product-scraping",
+        "sample": True,
+        "meta": {"Client industry": ph("Add industry"), "Store type": ph("Add platform, e.g. Shopify"), "Products / variants": ph("Add verified count"), "Timeline": ph("Add timeline")},
+        "challenge": "The client needed every product from an online store, including all size and colour variants, prices, images and specifications, in a format that could be imported into their own catalog system.",
+        "approach": [
+            ("Site mapping", "Crawled the category tree and listing pages to build a complete, deduplicated list of product URLs."),
+            ("Structured data first", "Checked each product page for embedded JSON-LD and internal product JSON, which carry cleaner prices, SKUs and variant data than the visible HTML."),
+            ("Variant handling", "Expanded each product into one row per variant with a shared parent ID, so the file matched the import template."),
+            ("Images", "Collected full-resolution image URLs and optionally downloaded them into folders named by SKU."),
+            ("Validation", "Checked for missing prices, duplicate SKUs and broken image links before delivery."),
+        ],
+        "fields": ["Product ID", "Parent ID", "Title", "Brand", "SKU", "Variant (size/colour)", "Price", "Sale price", "Availability", "Category path", "Image URLs", "Description"],
+        "tech": ["Python", "Scrapy", "Requests", "JSON-LD parsing", "Pandas"],
+        "outcome": ph("Add the real outcome. Do not include figures the client has not confirmed."),
+    },
+    {
+        "slug": "real-estate-data-collection",
+        "category": "Real estate data collection",
+        "title": "Collecting and Normalising Property Listings Across Portals",
+        "short": "Search-driven extraction from property websites with normalised units, prices and property types across sources.",
+        "service": "real-estate-data-extraction",
+        "sample": True,
+        "meta": {"Client type": ph("Add client type"), "Markets covered": ph("Add locations"), "Listings collected": ph("Add verified count"), "Run frequency": ph("Add, e.g. one-off or weekly")},
+        "challenge": "The client wanted to compare property listings across more than one source. Each portal used different layouts, units, property-type labels and price formats, and many pages loaded results dynamically.",
+        "approach": [
+            ("Search criteria", "Agreed locations, property types and price ranges, and converted them into search URLs for each source."),
+            ("Dynamic pages", "Used Playwright where results loaded with JavaScript, and captured internal JSON responses where available."),
+            ("Detail pages", "Visited each listing for features, description, agent details and listing dates."),
+            ("Normalisation", "Converted areas to one unit, prices to one currency format, and mapped property-type labels to a shared list."),
+            ("Change tracking", "For repeat runs, compared each run with the previous one to flag new, removed and re-priced listings."),
+        ],
+        "fields": ["Listing URL", "Source", "Price", "Address", "Property type", "Bedrooms", "Bathrooms", "Area", "Features", "Agent / agency", "Listed date"],
+        "tech": ["Python", "Playwright", "Requests", "Pandas"],
+        "outcome": ph("Add the real outcome and how the data was used."),
+    },
+    {
+        "slug": "business-directory-extraction",
+        "category": "Business directory extraction",
+        "title": "Complete Extraction of a Professional Business Directory",
+        "short": "Segmenting searches to get past result caps, following every profile link and standardising contact fields.",
+        "service": "business-directory-scraping",
+        "sample": True,
+        "meta": {"Directory type": ph("Add, e.g. professional register"), "Country": ph("Add country"), "Profiles extracted": ph("Add verified count"), "Timeline": ph("Add timeline")},
+        "challenge": "The directory capped results per search and showed only basic details on listing pages. The valuable fields, such as email, website and specialisms, were on individual profile pages.",
+        "approach": [
+            ("Segmentation", "Split the search by postcode and category so each search stayed under the result cap."),
+            ("Profile crawl", "Collected every profile URL, deduplicated them, then visited each profile to capture the full record."),
+            ("Resilience", "Added polite request pacing, retries and resume-from-checkpoint, so a long run could continue after interruptions."),
+            ("Standardisation", "Formatted phone numbers to one international format and split addresses into street, city and postcode."),
+            ("QA", "Spot-checked records against the live site and reported any fields that were blank at source."),
+        ],
+        "fields": ["Name", "Organisation", "Category / specialism", "Street", "City", "Postcode", "Phone", "Email", "Website", "Profile URL"],
+        "tech": ["Python", "Requests", "BeautifulSoup", "Pandas"],
+        "outcome": ph("Add the real outcome."),
+    },
+    {
+        "slug": "pdf-document-extraction",
+        "category": "PDF document extraction",
+        "title": "Converting Batches of PDF Reports into Structured Excel Data",
+        "short": "Detecting text versus scanned pages, extracting tables by position and flagging pages that need human review.",
+        "service": "pdf-data-extraction",
+        "sample": True,
+        "meta": {"Document type": ph("Add document type"), "Files processed": ph("Add verified count"), "PDF type": ph("Text-based / scanned"), "Timeline": ph("Add timeline")},
+        "challenge": "The client had a large batch of PDF documents with tables in similar but not identical layouts. Copying them manually would have taken weeks, and some pages were scanned images.",
+        "approach": [
+            ("Triage", "Classified every file and page as text-based or scanned, and grouped files by layout."),
+            ("Table extraction", "Used pdfplumber with position-based rules to rebuild table rows and columns for each layout group."),
+            ("OCR", "Ran OCR on scanned pages and applied validation rules, such as totals and date formats, to catch misreads."),
+            ("Traceability", "Added file name and page number to every output row."),
+            ("Exceptions", "Produced a separate report of pages that could not be parsed confidently, for manual review."),
+        ],
+        "fields": ["Source file", "Page", "Record fields (per document type)", "Totals", "Dates", "Validation flag"],
+        "tech": ["Python", "pdfplumber", "PyMuPDF", "Tesseract OCR", "Pandas"],
+        "outcome": ph("Add the real outcome."),
+    },
+    {
+        "slug": "large-scale-website-scraping",
+        "category": "Large-scale website scraping",
+        "title": "Scraping Thousands of Websites with One Configurable Pipeline",
+        "short": "Running one extraction pipeline across a long list of different websites, with concurrency, retries and per-site error reporting.",
+        "service": "website-web-scraping",
+        "sample": True,
+        "meta": {"Use case": ph("Add use case"), "Websites processed": ph("Add verified count"), "Fields per site": ph("Add fields"), "Timeline": ph("Add timeline")},
+        "challenge": "The client had a long list of company websites, each with a different structure, and needed the same set of fields, such as contact details, page titles and specific keywords, from every one.",
+        "approach": [
+            ("Input hygiene", "Normalised and deduplicated the URL list, and removed dead domains before the main run."),
+            ("Generic extraction", "Built extraction rules that do not depend on one layout: contact and about pages, structured data, meta tags and pattern-based email and phone detection."),
+            ("Concurrency", "Ran requests concurrently with per-domain rate limits, timeouts and retries."),
+            ("Fallbacks", "Retried JavaScript-heavy sites with a headless browser only when the fast path returned empty results."),
+            ("Reporting", "Logged a status for every site (success, blocked, timeout, no data), so the result was transparent."),
+        ],
+        "fields": ["Input URL", "Final URL", "Status", "Company name", "Emails", "Phones", "Social links", "Page title", "Custom fields"],
+        "tech": ["Python", "httpx / asyncio", "BeautifulSoup", "Playwright", "Pandas"],
+        "outcome": ph("Add the real outcome."),
+    },
+    {
+        "slug": "python-automation",
+        "category": "Python automation",
+        "title": "Automating a Repetitive Browser and Excel Workflow",
+        "short": "Replacing a daily manual routine of logging in, downloading reports and merging spreadsheets with one script.",
+        "service": "custom-web-automation",
+        "sample": True,
+        "meta": {"Client team": ph("Add team / industry"), "Process automated": ph("Add process"), "Run frequency": ph("Add frequency"), "Delivered as": ph("Script / .exe")},
+        "challenge": "A team was spending time every day logging into a web portal, downloading several reports, and merging them in Excel into one summary sheet.",
+        "approach": [
+            ("Process mapping", "Recorded each manual step and the exact output the team expected."),
+            ("Browser automation", "Automated login and downloads with Playwright, with credentials read from a local environment file rather than the code."),
+            ("Data processing", "Merged and cleaned the downloaded files with Pandas and wrote a formatted Excel summary."),
+            ("Reliability", "Added logging, error screenshots and clear failure messages."),
+            ("Packaging", "Packaged the script as a Windows executable and scheduled it with Task Scheduler."),
+        ],
+        "fields": ["Merged report columns (per process)", "Run timestamp", "Status log"],
+        "tech": ["Python", "Playwright", "Pandas", "openpyxl", "PyInstaller"],
+        "outcome": ph("Add the real outcome, for example time saved as reported by the client."),
+    },
+]

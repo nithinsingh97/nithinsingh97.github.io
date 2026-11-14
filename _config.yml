@@ -1,0 +1,4 @@
+# GitHub Pages: publish files as-is; keep the README off the live site.
+exclude:
+  - README.md
+  - _tools

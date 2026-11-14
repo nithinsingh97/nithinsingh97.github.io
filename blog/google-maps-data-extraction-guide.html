@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google Maps Data Extraction Guide | Nithin Singh</title>
+<meta name="description" content="How to extract business data from Google Maps: available fields, search planning for full coverage, deduplication, emails, the Places API and compliance.">
+<meta name="author" content="Nithin Singh">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://nithinsingh97.github.io/blog/google-maps-data-extraction-guide.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nithin Singh">
+<meta property="og:title" content="Google Maps Data Extraction Guide | Nithin Singh">
+<meta property="og:description" content="How to extract business data from Google Maps: available fields, search planning for full coverage, deduplication, emails, the Places API and compliance.">
+<meta property="og:url" content="https://nithinsingh97.github.io/blog/google-maps-data-extraction-guide.html">
+<meta property="og:image" content="https://nithinsingh97.github.io/assets/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nithin Singh: Web Scraping, Python Data Extraction and Lead Generation">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Google Maps Data Extraction Guide | Nithin Singh">
+<meta name="twitter:description" content="How to extract business data from Google Maps: available fields, search planning for full coverage, deduplication, emails, the Places API and compliance.">
+<meta name="twitter:image" content="https://nithinsingh97.github.io/assets/images/og-image.png">
+<meta name="theme-color" content="#1f5eff">
+<link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://nithinsingh97.github.io/#person",
+   "name": "Nithin Singh",
+   "url": "https://nithinsingh97.github.io/",
+   "jobTitle": "Web Scraping Specialist | Python Data Extraction Expert | Lead Generation Specialist",
+   "description": "Nithin Singh is a freelance web scraping and Python data extraction specialist and Fiverr Top Rated Seller, freelancing since 2019. He builds custom scrapers, lead generation datasets and data automation for businesses worldwide.",
+   "image": "https://nithinsingh97.github.io/assets/images/og-image.png",
+   "knowsAbout": [
+    "Web scraping",
+    "Data extraction",
+    "Python",
+    "Selenium",
+    "Playwright",
+    "BeautifulSoup",
+    "Scrapy",
+    "Pandas",
+    "Lead generation",
+    "Data research",
+    "Google Maps data extraction",
+    "E-commerce product data",
+    "PDF data extraction",
+    "Excel automation",
+    "Web automation"
+   ],
+   "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Web Scraping Specialist",
+    "skills": "Web scraping, Data extraction, Python, Selenium, Playwright, BeautifulSoup, Scrapy, Pandas, Lead generation, Data research"
+   },
+   "sameAs": [
+    "https://www.fiverr.com/s/61zovaR"
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://nithinsingh97.github.io/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Blog",
+     "item": "https://nithinsingh97.github.io/blog.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Google Maps Data Extraction Guide",
+     "item": "https://nithinsingh97.github.io/blog/google-maps-data-extraction-guide.html"
+    }
+   ]
+  },
+  {
+   "@type": "BlogPosting",
+   "@id": "https://nithinsingh97.github.io/blog/google-maps-data-extraction-guide.html#article",
+   "headline": "Google Maps Data Extraction Guide",
+   "description": "How to extract business data from Google Maps: available fields, search planning for full coverage, deduplication, emails, the Places API and compliance.",
+   "url": "https://nithinsingh97.github.io/blog/google-maps-data-extraction-guide.html",
+   "mainEntityOfPage": "https://nithinsingh97.github.io/blog/google-maps-data-extraction-guide.html",
+   "datePublished": "2026-11-14",
+   "dateModified": "2026-11-14",
+   "author": {
+    "@id": "https://nithinsingh97.github.io/#person"
+   },
+   "publisher": {
+    "@id": "https://nithinsingh97.github.io/#person"
+   },
+   "image": "https://nithinsingh97.github.io/assets/images/og-image.png",
+   "articleSection": "Lead Generation",
+   "inLanguage": "en",
+   "timeRequired": "PT8M"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How many results can you get from Google Maps?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "As many as exist for your category and area, provided the search is split into enough small areas. A single search is capped; planned searches are not."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does Google Maps data include emails?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Usually not. Emails are found by visiting each business's own website and collecting publicly published addresses."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html" aria-label="Nithin Singh, home">
+      <span class="brand-mark" aria-hidden="true">NS</span>
+      <span class="brand-text"><span class="brand-name">Nithin Singh</span><span class="brand-sub">Web Scraping &amp; Data Extraction</span></span>
+    </a>
+    <nav class="nav" aria-label="Main"><ul><li><a href="../index.html">Home</a></li><li><a href="../about.html">About</a></li><li><a href="../services.html">Services</a></li><li><a href="../portfolio.html">Portfolio</a></li><li><a href="../blog.html" aria-current="page">Blog</a></li><li><a href="../contact.html">Contact</a></li></ul></nav>
+    <div class="header-cta">
+      <a class="btn btn-ghost btn-sm" href="../contact.html">Get a Quote</a>
+      <a class="btn btn-fiverr btn-sm" href="https://www.fiverr.com/s/61zovaR" target="_blank" rel="noopener" ><span class="dot" aria-hidden="true"></span>Hire Nithin on Fiverr<span class="sr-only"> (opens Fiverr in a new tab)</span></a>
+    </div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+      <svg class="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobile-nav">
+    <nav aria-label="Mobile"><ul><li><a href="../index.html">Home</a></li><li><a href="../about.html">About</a></li><li><a href="../services.html">Services</a></li><li><a href="../portfolio.html">Portfolio</a></li><li><a href="../blog.html" aria-current="page">Blog</a></li><li><a href="../contact.html">Contact</a></li></ul></nav>
+    <a class="btn btn-fiverr" href="https://www.fiverr.com/s/61zovaR" target="_blank" rel="noopener" ><span class="dot" aria-hidden="true"></span>Hire Nithin on Fiverr<span class="sr-only"> (opens Fiverr in a new tab)</span></a>
+    <a class="btn btn-ghost" href="../contact.html">Request a Project Quote</a>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Home</a></li><li><a href="../blog.html">Blog</a></li><li><span aria-current="page">Google Maps Data Extraction Guide</span></li></ol></nav>
+    <span class="eyebrow">Lead Generation</span>
+    <h1>Google Maps Data Extraction Guide</h1>
+    <p class="lead">How to extract business data from Google Maps: available fields, search planning for full coverage, deduplication, emails, the Places API and compliance.</p>
+    <div class="article-meta"><span class="author-inline"><span class="avatar" aria-hidden="true">NS</span><a href="../about.html" rel="author">Nithin Singh</a></span>
+      <span>Published <time datetime="2026-11-14">2026-11-14</time></span><span>8 min read</span><span>Lead Generation</span></div>
+  </div>
+</section>
+<section class="section">
+  <div class="container content-grid">
+    <article class="prose">
+      <div class="answer-box"><strong class="lbl">Quick answer</strong><p>Google Maps data extraction collects public business listing details, such as name, category, address, phone, website, rating and review count, for a category and location. Complete coverage depends on splitting large areas into many smaller searches and deduplicating the merged results. Emails are not usually on Maps and are collected from business websites instead.</p></div>
+      <h2 id="fields">What data is available</h2>
+<p>A typical Google Maps listing can show:</p>
+<ul>
+<li>Business name and primary category</li>
+<li>Full address and map coordinates</li>
+<li>Phone number and website</li>
+<li>Rating and review count</li>
+<li>Opening hours</li>
+<li>The listing's Maps URL, which is useful as a unique identifier</li>
+</ul>
+<p>Not every business fills in every field, so expect some blanks. That is the source, not an extraction error.</p>
+<h2 id="coverage">The coverage problem</h2>
+<p>A search on Google Maps shows a limited number of results, however many businesses exist. A search for <em>plumbers in California</em> returns only a fraction of the plumbers in California. Full coverage comes from planning:</p>
+<ol>
+<li>List every city, or every postcode, in the target region.</li>
+<li>For dense cities, split further into neighbourhoods or map grid points.</li>
+<li>Run each keyword in each area, plus close synonyms (for example <em>plumber</em>, <em>plumbing service</em>, <em>emergency plumber</em>).</li>
+<li>Merge everything and deduplicate.</li>
+</ol>
+<h2 id="dedup">Deduplication done properly</h2>
+<p>Overlapping searches return the same business many times. Deduplicate on the Maps listing URL or place ID first, then on normalised phone numbers, then on a normalised name and address combination, to catch the same business listed twice.</p>
+<h2 id="emails">Getting email addresses</h2>
+<p>Email addresses are rarely shown on Maps listings. The standard approach is enrichment: visit each listed website and look for publicly published emails on the homepage, contact page and footer. Expect a portion of businesses to have no public email at all. Read more in <a href="../blog/build-b2b-lead-generation-dataset.html">How to build a B2B lead generation dataset</a>.</p>
+<h2 id="api">Scraping vs the Places API</h2>
+<p>Google offers the official Places API, which returns structured place data under Google's terms and pricing. For some projects, especially ongoing integrations inside a product, the API is the right choice. For one-off research lists, browser-based extraction of public listings is commonly used. A good freelancer should tell you which suits your case.</p>
+<h2 id="compliance">Compliance considerations</h2>
+<p>Collecting business information that is shown publicly is different from collecting private data. Platform terms still apply, and so do data protection laws (GDPR, UK GDPR, CAN-SPAM and others) when you use the data for outreach. Keep outreach relevant, honour opt-outs and check your obligations in your region. This is general information, not legal advice.</p>
+
+      <h2 id="faq">Frequently asked questions</h2><div class="faq"><details><summary>How many results can you get from Google Maps?</summary><p>As many as exist for your category and area, provided the search is split into enough small areas. A single search is capped; planned searches are not.</p></details><details><summary>Does Google Maps data include emails?</summary><p>Usually not. Emails are found by visiting each business&#x27;s own website and collecting publicly published addresses.</p></details></div>
+      <section class="author-box" aria-label="About the author"><span class="avatar" aria-hidden="true">NS</span><div>
+        <h2>About the author</h2>
+        <p><a href="../about.html">Nithin Singh</a> is a web scraping and Python data extraction specialist, freelancing since 2019 and a Fiverr Top Rated Seller. He builds custom scrapers, lead generation datasets and data automation for businesses worldwide.</p>
+        <div class="btn-row"><a class="btn btn-fiverr btn-sm" href="https://www.fiverr.com/s/61zovaR" target="_blank" rel="noopener" ><span class="dot" aria-hidden="true"></span>Hire Nithin on Fiverr<span class="sr-only"> (opens Fiverr in a new tab)</span></a><a class="btn btn-ghost btn-sm" href="../contact.html">Request a Quote</a></div></div></section>
+    </article>
+    <aside class="sidebar">
+      <div class="side-card toc"><h2>In this article</h2><ol><li><a href="#fields">What data is available</a></li><li><a href="#coverage">The coverage problem</a></li><li><a href="#dedup">Deduplication done properly</a></li><li><a href="#emails">Getting email addresses</a></li><li><a href="#api">Scraping vs the Places API</a></li><li><a href="#compliance">Compliance considerations</a></li><li><a href="#faq">FAQ</a></li></ol></div>
+      <div class="side-card dark"><h2>Need this done for you?</h2><p>Custom scrapers and clean datasets, delivered.</p><a class="btn btn-primary" href="https://www.fiverr.com/s/61zovaR" target="_blank" rel="noopener" ><span class="dot" aria-hidden="true"></span>Hire Nithin on Fiverr<span class="sr-only"> (opens Fiverr in a new tab)</span></a><a class="btn btn-ghost" href="../contact.html">Get a Quote</a></div>
+      <div class="side-card"><h2>Related services</h2><ul><li><a href="../services/google-maps-data-extraction.html">Google Maps Business Data Extraction</a></li><li><a href="../services/b2b-lead-generation.html">B2B Lead Generation</a></li></ul></div>
+      <div class="side-card"><h2>More guides</h2><ul><li><a href="../blog/what-is-web-scraping.html">What Is Web Scraping? A Complete Business Guide</a></li><li><a href="../blog/python-vs-selenium-vs-playwright.html">Python vs Selenium vs Playwright: Which to Use for Web Scraping</a></li><li><a href="../blog/extract-data-from-thousands-of-websites.html">How to Extract Data From Thousands of Websites</a></li></ul></div>
+    </aside>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">NS</span><span class="brand-text"><span class="brand-name">Nithin Singh</span><span class="brand-sub">Web Scraping & Data Extraction Specialist</span></span></a>
+        <p>Custom web scraping, Python data extraction and lead generation for businesses worldwide. Freelancing since 2019. Fiverr Top Rated Seller.</p>
+        <div class="btn-row"><a class="btn btn-primary btn-sm" href="https://www.fiverr.com/s/61zovaR" target="_blank" rel="noopener" ><span class="dot" aria-hidden="true"></span>Hire Nithin on Fiverr<span class="sr-only"> (opens Fiverr in a new tab)</span></a></div>
+      </div>
+      <div><h2>Services</h2><ul><li><a href="../services/website-web-scraping.html">Website Web Scraping</a></li><li><a href="../services/python-data-extraction.html">Python Data Extraction</a></li><li><a href="../services/google-maps-data-extraction.html">Google Maps Business Data Extraction</a></li><li><a href="../services/b2b-lead-generation.html">B2B Lead Generation</a></li><li><a href="../services/ecommerce-product-scraping.html">E-commerce Product Scraping</a></li><li><a href="../services/real-estate-data-extraction.html">Real Estate Data Extraction</a></li><li><a href="../services.html">All services</a></li></ul></div>
+      <div><h2>Guides</h2><ul><li><a href="../blog/what-is-web-scraping.html">What Is Web Scraping? A Complete Business Guide</a></li><li><a href="../blog/python-vs-selenium-vs-playwright.html">Python vs Selenium vs Playwright</a></li><li><a href="../blog/extract-data-from-thousands-of-websites.html">How to Extract Data From Thousands of Websites</a></li><li><a href="../blog/google-maps-data-extraction-guide.html">Google Maps Data Extraction Guide</a></li><li><a href="../blog/scrape-ecommerce-product-data.html">How to Scrape E-commerce Product Data</a></li><li><a href="../blog.html">All articles</a></li></ul></div>
+      <div><h2>Site</h2><ul>
+        <li><a href="../about.html">About Nithin</a></li>
+        <li><a href="../portfolio.html">Case studies</a></li>
+        <li><a href="../contact.html">Request a quote</a></li>
+        <li><a href="https://www.fiverr.com/s/61zovaR" target="_blank" rel="noopener">Fiverr Gig</a></li>
+        <li><a href="../sitemap.xml">Sitemap</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> Nithin Singh. All rights reserved.</span>
+      <span>No tracking cookies. No third-party scripts.</span>
+    </div>
+  </div>
+</footer>
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>
