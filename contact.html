@@ -128,25 +128,34 @@
 </section>
 <section class="section">
   <div class="container content-grid">
-    <div class="form-card">
-      <h2 class="mt-0">Project enquiry</h2>
-      <p class="muted">Fields marked <span class="req" style="color:#c2410c">*</span> are required. Submitting opens your email app with the enquiry prefilled. Nothing is sent until you press Send.</p>
-      <form id="enquiry-form" class="form" novalidate data-email="nithinsingh1997@gmail.com" data-google-form="">
-        <div class="row-2">
-          <div class="field"><label for="f-name">Name <span class="req">*</span></label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
-          <div class="field"><label for="f-email">Business email <span class="req">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
-        </div>
-        <div class="field"><label for="f-company">Company website</label><input id="f-company" name="company" type="url" placeholder="https://" autocomplete="url"></div>
-        <div class="field"><label for="f-desc">Project description <span class="req">*</span></label><textarea id="f-desc" name="description" required aria-describedby="h-desc"></textarea><span class="hint" id="h-desc">What data do you need, which fields, and what will you use it for?</span></div>
-        <div class="field"><label for="f-source">Data source URL</label><input id="f-source" name="source" type="url" placeholder="https://example.com/listings"></div>
-        <div class="row-2">
-          <div class="field"><label for="f-records">Estimated records</label><input id="f-records" name="records" type="text" placeholder="e.g. 5,000 businesses"></div>
-          <div class="field"><label for="f-format">Required output format</label>
-            <select id="f-format" name="format"><option value="">Select…</option><option>Excel (.xlsx)</option><option>CSV</option><option>JSON</option><option>Google Sheets</option><option>CRM import file</option><option>Other / not sure</option></select></div>
-        </div>
-        <div class="field"><label for="f-deadline">Deadline</label><input id="f-deadline" name="deadline" type="date"></div>
+    <div class="form-card project-intake">
+      <div class="intake-heading">
+        <div><span class="intake-kicker"><span class="intake-pulse"></span> PROJECT INTAKE / 01</span><h2 class="mt-0">Let's map your data project.</h2><p class="muted">A few details help me scope the right workflow, estimate the effort and send you a useful quote.</p></div>
+        <div class="intake-stamp" aria-hidden="true"><span>NS</span><small>DATA<br>STUDIO</small></div>
+      </div>
+      <div class="intake-rail" aria-label="Enquiry stages"><span class="active"><b>01</b> You</span><i></i><span><b>02</b> Data</span><i></i><span><b>03</b> Delivery</span></div>
+      <form id="enquiry-form" class="form intake-form" novalidate data-email="nithinsingh1997@gmail.com" data-google-form="">
+        <section class="intake-stage" aria-labelledby="intake-you"><div class="stage-heading"><span>01</span><div><h3 id="intake-you">A little about you</h3><p>Where should I send the project plan?</p></div></div>
+          <div class="row-2">
+            <div class="field"><label for="f-name">Your name <span class="req">*</span></label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="e.g. Alex Morgan" required></div>
+            <div class="field"><label for="f-email">Business email <span class="req">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required></div>
+          </div>
+          <div class="field"><label for="f-company">Company website <span class="optional">OPTIONAL</span></label><input id="f-company" name="company" type="url" placeholder="https://yourcompany.com" autocomplete="url"></div>
+        </section>
+        <section class="intake-stage" aria-labelledby="intake-data"><div class="stage-heading"><span>02</span><div><h3 id="intake-data">What data are we working with?</h3><p>Tell me where the information lives and what you need from it.</p></div></div>
+          <div class="field"><label for="f-desc">Project brief <span class="req">*</span></label><textarea id="f-desc" name="description" required aria-describedby="h-desc" placeholder="Example: I need business names, websites, emails and phone numbers from a list of local directories…"></textarea><span class="hint" id="h-desc">Include the fields you need, target locations and how you plan to use the data.</span></div>
+          <div class="field"><label for="f-source">Source website or URL <span class="optional">OPTIONAL</span></label><input id="f-source" name="source" type="url" placeholder="https://example.com/listings"></div>
+        </section>
+        <section class="intake-stage" aria-labelledby="intake-delivery"><div class="stage-heading"><span>03</span><div><h3 id="intake-delivery">Shape the delivery</h3><p>Rough estimates are absolutely fine.</p></div></div>
+          <div class="row-2">
+            <div class="field"><label for="f-records">Estimated records <span class="optional">IF KNOWN</span></label><input id="f-records" name="records" type="text" placeholder="e.g. 5,000 businesses"></div>
+            <div class="field"><label for="f-format">Preferred format</label><select id="f-format" name="format"><option value="">Choose a format…</option><option>Excel (.xlsx)</option><option>CSV</option><option>JSON</option><option>Google Sheets</option><option>CRM import file</option><option>Other / not sure</option></select></div>
+          </div>
+          <div class="field"><label for="f-deadline">Target deadline <span class="optional">IF ANY</span></label><input id="f-deadline" name="deadline" type="date"></div>
+        </section>
+        <div class="intake-note"><span aria-hidden="true">↳</span><p><strong>What happens next?</strong> I’ll review your brief, clarify anything missing and reply with a practical plan and quote. Nothing is sent until you choose to send the email.</p></div>
         <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
-        <div class="btn-row"><button class="btn btn-primary" type="submit">Send project enquiry <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+        <div class="btn-row intake-submit"><button class="btn btn-primary" type="submit">Send project brief <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><span>Usually replies within one business day</span></div>
       </form>
     </div>
     <aside class="sidebar">
