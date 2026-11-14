@@ -1387,3 +1387,39 @@ body.studio-page{font-size:17px;line-height:1.72}
 .studio-page .cta-band{
  color:#ffffff!important;
 }
+
+
+/* BRAND COLOUR CONSISTENCY: replace lime-green text with accessible brand blue. */
+.studio-page:not(.home-page) .eyebrow,
+.studio-page:not(.home-page) .nav a:hover,
+.studio-page:not(.home-page) .nav a[aria-current=page],
+.studio-page:not(.home-page) a,
+.studio-page:not(.home-page) .more,
+.studio-page:not(.home-page) .card .more,
+.studio-page:not(.home-page) .site-footer a:hover,
+.studio-page:not(.home-page) .notfound .code{
+ color:#1748d6!important;
+}
+.studio-page:not(.home-page) .btn-fiverr,
+.studio-page:not(.home-page) .page-hero .btn-primary,
+.studio-page:not(.home-page) .btn-primary{
+ background:#1748d6!important;
+ color:#ffffff!important;
+ border-color:#1748d6!important;
+}
+.studio-page:not(.home-page) .btn-fiverr a,
+.studio-page:not(.home-page) .btn-primary a{
+ color:#ffffff!important;
+}
+.home-page .premium-proof strong,
+.home-page .premium-proof>div strong,
+.home-page .premium-stat strong,
+.home-page .stat-card strong{
+ color:#1748d6!important;
+}
+.home-page a:not(.btn):not(.brand),
+.home-page .eyebrow,
+.home-page .premium-eyebrow,
+.home-page .post-meta .cat{
+ color:#1748d6;
+}
