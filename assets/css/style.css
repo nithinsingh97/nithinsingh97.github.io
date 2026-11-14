@@ -596,3 +596,22 @@ pre code { background: none; color: inherit; padding: 0; font-size: inherit; }
  .premium-cta .premium-actions { align-items:stretch;flex-direction:column;width:100%; }
  .premium-cta .premium-actions .btn { width:100%; }
 }
+
+
+/* Cache-refresh / premium homepage finishing fixes */
+.credibility-ribbon { display:none !important; }
+.premium-hero { position:relative; }
+.premium-grid { width:100%; }
+.premium-copy { min-width:0; }
+.premium-proof div { min-width:0; }
+.premium-proof strong { display:block; }
+.premium-proof span { display:block; }
+.premium-service-card { color:inherit; }
+.premium-service-card:hover { text-decoration:none; }
+.gig-feature { color:inherit; }
+.gig-feature:hover { text-decoration:none; }
+.gig-feature-bottom .gig-open { text-decoration:none; }
+.premium-cta .btn-ghost { color:#fff; }
+@media (min-width:901px) {
+ .premium-grid { grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr); }
+}
