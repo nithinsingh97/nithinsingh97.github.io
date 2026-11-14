@@ -1423,3 +1423,15 @@ body.studio-page{font-size:17px;line-height:1.72}
 .home-page .post-meta .cat{
  color:#1748d6;
 }
+
+
+/* Ensure small section labels such as “WHAT I DO” and “In short” use brand blue. */
+.studio-page .eyebrow,
+.home-page .eyebrow,
+.studio-page .lbl,
+.home-page .lbl,
+.studio-page .answer-box .lbl,
+.home-page .answer-box .lbl{
+ color:#1748d6!important;
+ -webkit-text-fill-color:#1748d6!important;
+}
