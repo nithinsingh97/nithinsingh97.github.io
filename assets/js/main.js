@@ -113,8 +113,11 @@
 
   function valid() {
     var okAll = true;
-    form.querySelectorAll("[required]").forEach(function (f) {
-      var ok = f.value.trim() !== "" && (!f.checkValidity || f.checkValidity());
+    form.querySelectorAll("input, textarea, select").forEach(function (f) {
+      var value = String(f.value || "").trim();
+      var missingRequired = f.hasAttribute("required") && value === "";
+      var invalidValue = value !== "" && f.checkValidity && !f.checkValidity();
+      var ok = !missingRequired && !invalidValue;
       f.setAttribute("aria-invalid", ok ? "false" : "true");
       if (!ok) okAll = false;
     });
