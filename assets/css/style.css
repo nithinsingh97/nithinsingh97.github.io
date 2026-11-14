@@ -813,3 +813,124 @@ p, li { font-size:1.04rem; }
  .home-page *, .home-page *:before, .home-page *:after { animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important; }
  .home-page .reveal { opacity:1;transform:none; }
 }
+
+
+/* ==========================================================================
+   STUDIO SYSTEM — shared premium design for every inner page
+   The homepage has its own hero; all other routes use this visual language.
+   ========================================================================== */
+.studio-page:not(.home-page) {
+  --ink:#f2f5fc;--ink-2:#d2dbee;--ink-3:#a5b2ca;
+  --line:rgba(190,210,248,.15);--line-2:rgba(190,210,248,.24);
+  --bg:#080d18;--bg-soft:#0d1728;--bg-tint:#111f35;
+  --blue:#b9ff66;--blue-600:#a6ec54;--blue-700:#8ed43e;--blue-050:rgba(185,255,102,.1);
+  --navy:#0b1425;--shadow:0 18px 48px rgba(0,0,0,.22);
+  background:#080d18;color:#f2f5fc;
+}
+.studio-page:not(.home-page) body { background:#080d18;color:#f2f5fc; }
+.studio-page:not(.home-page) .site-header {
+ background:rgba(8,13,24,.9);border-bottom:1px solid rgba(190,210,248,.13);
+ backdrop-filter:blur(18px);
+}
+.studio-page:not(.home-page) .brand-name,.studio-page:not(.home-page) .site-footer .brand-name {color:#f4f7ff}
+.studio-page:not(.home-page) .brand-sub {color:#9eacc5}
+.studio-page:not(.home-page) .nav a {color:#c1cce0}
+.studio-page:not(.home-page) .nav a:hover,.studio-page:not(.home-page) .nav a[aria-current=page] {color:#b9ff66;background:rgba(185,255,102,.09)}
+.studio-page:not(.home-page) .header-cta .btn-ghost {color:#eff4ff;background:rgba(255,255,255,.045);border-color:rgba(210,226,255,.2)}
+.studio-page:not(.home-page) .nav-toggle {color:#fff}
+.studio-page:not(.home-page) .mobile-nav {background:#0b1425;border-color:rgba(190,210,248,.15)}
+.studio-page:not(.home-page) .mobile-nav a:not(.btn) {color:#f4f7ff}
+.studio-page:not(.home-page) main {background:#080d18}
+.studio-page:not(.home-page) .page-hero {
+ position:relative;isolation:isolate;overflow:hidden;
+ padding:clamp(64px,8vw,108px) 0 72px;
+ background:radial-gradient(ellipse at 88% 8%,rgba(45,100,255,.23),transparent 38%),radial-gradient(ellipse at 5% 100%,rgba(185,255,102,.07),transparent 40%),linear-gradient(135deg,#0a1221,#101c31 75%,#0b1425);
+ border-bottom:1px solid rgba(190,210,248,.14);
+}
+.studio-page:not(.home-page) .page-hero:after {
+ content:"";position:absolute;z-index:-1;right:-160px;top:-260px;width:520px;height:520px;border:1px solid rgba(185,255,102,.14);border-radius:50%;
+ box-shadow:0 0 0 52px rgba(185,255,102,.025),0 0 0 105px rgba(185,255,102,.018);pointer-events:none;
+}
+.studio-page:not(.home-page) .breadcrumbs,.studio-page:not(.home-page) .breadcrumbs a {color:#a8b7d0}
+.studio-page:not(.home-page) .eyebrow {color:#b9ff66;letter-spacing:.13em;font-weight:850}
+.studio-page:not(.home-page) .page-hero h1 {
+ color:#f4f7ff;font-size:clamp(2.8rem,5.7vw,5.2rem);line-height:1.02;letter-spacing:-.065em;max-width:1000px;
+}
+.studio-page:not(.home-page) .page-hero .lead {color:#b6c3d9;font-size:clamp(1.08rem,1.5vw,1.28rem);max-width:790px;line-height:1.7}
+.studio-page:not(.home-page) .page-hero .btn-primary {background:#b9ff66;color:#101820;border-color:#b9ff66;font-weight:900}
+.studio-page:not(.home-page) .page-hero .btn-ghost {background:rgba(255,255,255,.05);color:#f3f6ff;border-color:rgba(210,226,255,.23)}
+.studio-page:not(.home-page) .section {background:#080d18;color:#f2f5fc}
+.studio-page:not(.home-page) .section:nth-of-type(even) {background:#0b1423}
+.studio-page:not(.home-page) .section-head h2,.studio-page:not(.home-page) h2,.studio-page:not(.home-page) h3 {color:#f0f4ff}
+.studio-page:not(.home-page) p,.studio-page:not(.home-page) li {color:#b4c0d5}
+.studio-page:not(.home-page) a {color:#b9ff66}
+.studio-page:not(.home-page) a:hover {color:#d4ff9f}
+.studio-page:not(.home-page) .card,.studio-page:not(.home-page) .side-card,.studio-page:not(.home-page) .form-card,
+.studio-page:not(.home-page) .answer-box,.studio-page:not(.home-page) .svc-block .box,
+.studio-page:not(.home-page) .pv-card,.studio-page:not(.home-page) .pv-proof>div {
+ background:linear-gradient(145deg,#142139,#0e192b);border:1px solid rgba(190,210,248,.15);
+ box-shadow:0 18px 44px rgba(0,0,0,.18);color:#eff4ff;
+}
+.studio-page:not(.home-page) .card {border-radius:19px;transition:transform .3s,border-color .3s,box-shadow .3s}
+.studio-page:not(.home-page) .card:hover {transform:translateY(-6px);border-color:rgba(185,255,102,.5);box-shadow:0 26px 55px rgba(0,0,0,.3)}
+.studio-page:not(.home-page) .card h3 a,.studio-page:not(.home-page) .pv-card h3 {color:#f3f6ff}
+.studio-page:not(.home-page) .card p,.studio-page:not(.home-page) .muted,.studio-page:not(.home-page) .pv-card-desc {color:#aebbd1}
+.studio-page:not(.home-page) .more,.studio-page:not(.home-page) .card .more {color:#b9ff66}
+.studio-page:not(.home-page) .prose {color:#c3cde0}
+.studio-page:not(.home-page) .prose h2,.studio-page:not(.home-page) .prose h3 {color:#f3f6ff}
+.studio-page:not(.home-page) .prose p,.studio-page:not(.home-page) .prose li {color:#bbc7da;line-height:1.85}
+.studio-page:not(.home-page) .prose a {color:#c8ff8b}
+.studio-page:not(.home-page) .prose blockquote {border-left-color:#b9ff66;background:rgba(185,255,102,.06);color:#dce6f7}
+.studio-page:not(.home-page) .answer-box {border-left:3px solid #b9ff66}
+.studio-page:not(.home-page) .answer-box .lbl {color:#caff92}
+.studio-page:not(.home-page) .answer-box p {color:#e0e8f7}
+.studio-page:not(.home-page) .content-grid {gap:clamp(30px,5vw,64px)}
+.studio-page:not(.home-page) .side-card h2,.studio-page:not(.home-page) .side-card h3 {color:#f3f6ff}
+.studio-page:not(.home-page) .side-card a {color:#c7ff8b}
+.studio-page:not(.home-page) .form-card label,.studio-page:not(.home-page) .field label {color:#e9effc}
+.studio-page:not(.home-page) input,.studio-page:not(.home-page) textarea,.studio-page:not(.home-page) select {
+ background:#0a1424;color:#f2f5fc;border:1px solid rgba(190,210,248,.22);border-radius:11px;
+}
+.studio-page:not(.home-page) input:focus,.studio-page:not(.home-page) textarea:focus,.studio-page:not(.home-page) select:focus {outline:2px solid rgba(185,255,102,.55);border-color:#b9ff66}
+.studio-page:not(.home-page) input::placeholder,.studio-page:not(.home-page) textarea::placeholder {color:#7e8ca6}
+.studio-page:not(.home-page) .hint,.studio-page:not(.home-page) .muted {color:#9eacc5}
+.studio-page:not(.home-page) .btn-primary {background:#b9ff66;color:#111a20;border-color:#b9ff66;font-weight:900}
+.studio-page:not(.home-page) .btn-ghost {background:rgba(255,255,255,.05);color:#eff4ff;border-color:rgba(210,226,255,.22)}
+.studio-page:not(.home-page) .btn-fiverr {background:#b9ff66;color:#111a20;border-color:#b9ff66}
+.studio-page:not(.home-page) .placeholder-note {background:#2b2415;border-color:#72551f;color:#ffe2a0}
+.studio-page:not(.home-page) .placeholder-note strong {color:#ffe2a0}
+.studio-page:not(.home-page) .ph {color:#ffd27a;background:rgba(255,197,84,.1)}
+.studio-page:not(.home-page) .pipeline>div,.studio-page:not(.home-page) .tech,.studio-page:not(.home-page) .step,
+.studio-page:not(.home-page) .case-meta>div,.studio-page:not(.home-page) .toc,.studio-page:not(.home-page) .article-meta {
+ background:#142139;border-color:rgba(190,210,248,.16);color:#e8efff;
+}
+.studio-page:not(.home-page) .case-meta dt,.studio-page:not(.home-page) .case-meta dd,
+.studio-page:not(.home-page) .article-meta,.studio-page:not(.home-page) .post-meta {color:#aebbd1}
+.studio-page:not(.home-page) .pv-proof strong {color:#caff91}
+.studio-page:not(.home-page) .pv-proof span {color:#aebbd1}
+.studio-page:not(.home-page) .pv-tag {color:#caff91}
+.studio-page:not(.home-page) .pv-verified {color:#caff91;background:rgba(185,255,102,.09);border-color:rgba(185,255,102,.25)}
+.studio-page:not(.home-page) .pv-card {border-radius:22px}
+.studio-page:not(.home-page) .pv-card:hover {border-color:rgba(185,255,102,.45);transform:translateY(-5px)}
+.studio-page:not(.home-page) .pv-count {color:#b9c6da}
+.studio-page:not(.home-page) .site-footer {background:#050912;color:#aebbd1;border-top:1px solid rgba(190,210,248,.13)}
+.studio-page:not(.home-page) .site-footer h2 {color:#f1f5ff}
+.studio-page:not(.home-page) .site-footer a {color:#c3cfe3}
+.studio-page:not(.home-page) .site-footer a:hover {color:#b9ff66}
+.studio-page:not(.home-page) .footer-bottom {border-top-color:rgba(190,210,248,.13)}
+.studio-page:not(.home-page) .notfound {background:radial-gradient(ellipse at 50% 20%,rgba(43,94,255,.2),transparent 45%),#080d18}
+.studio-page:not(.home-page) .notfound h1 {color:#f4f7ff}
+.studio-page:not(.home-page) .notfound .code {color:#b9ff66}
+.studio-page:not(.home-page) .notfound .lead {color:#b4c0d5}
+.studio-page:not(.home-page) .reveal {opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.75,.25,1)}
+.studio-page:not(.home-page) .reveal.in {opacity:1;transform:translateY(0)}
+@media(max-width:700px) {
+ .studio-page:not(.home-page) .page-hero {padding:52px 0 54px}
+ .studio-page:not(.home-page) .page-hero h1 {font-size:clamp(2.45rem,11vw,3.6rem)}
+ .studio-page:not(.home-page) .section {padding-top:58px;padding-bottom:58px}
+ .studio-page:not(.home-page) .prose p,.studio-page:not(.home-page) .prose li {font-size:1rem}
+}
+@media(prefers-reduced-motion:reduce) {
+ .studio-page:not(.home-page) *, .studio-page:not(.home-page) *:before,.studio-page:not(.home-page) *:after {animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+ .studio-page:not(.home-page) .reveal {opacity:1;transform:none}
+}
