@@ -390,7 +390,7 @@ def build_home():
 <section class="premium-hero">
  <div class="container premium-grid">
   <div class="premium-copy">
-   <span class="premium-eyebrow"><span class="live-dot"></span> Fiverr Top Rated Seller · {YEARS}+ years of experience</span>
+   <span class="premium-eyebrow"><span class="live-dot"></span> Fiverr Top Rated Seller · {YEARS} years of experience</span>
    <h1>Need data from the web?<br><span>I'll extract it for you.</span></h1>
    <p class="premium-lead">Custom web scraping, Python automation and lead generation. Get clean, structured data without the manual work.</p>
    <div class="premium-actions">{fiverr_btn("Hire me on Fiverr", "btn btn-primary")}<a class="btn btn-ghost" href="mailto:{CONTACT_EMAIL}">Email me</a><a class="premium-text-link" href="portfolio.html">View work →</a></div>
@@ -720,7 +720,8 @@ def build_contact():
       </form>
     </div>
     <aside class="sidebar">
-      <div class="side-card dark"><h2>Prefer Fiverr?</h2><p>Message or order directly through my Fiverr Gig, with Fiverr's order protection.</p>{fiverr_btn(cls="btn btn-primary")}</div>
+      <div class="side-card dark"><h2>Prefer Fiverr?</h2><p>View my gig, check the reviews or message me directly on Fiverr.</p><a class="btn btn-primary" href="{GIG_URL}" target="_blank" rel="noopener">View my Fiverr Gig ↗</a></div>
+      <div class="side-card"><h2>Email me directly</h2><p>For project enquiries and custom requirements.</p><a href="mailto:{CONTACT_EMAIL}"><strong>{CONTACT_EMAIL}</strong></a></div>
       <div class="side-card"><h2>What happens next</h2><ol class="toc">
         <li>I review the source and your requirements.</li><li>You get a plan, timeline and quote.</li>
         <li>A sample is delivered for approval.</li><li>The full dataset is delivered.</li></ol></div>
