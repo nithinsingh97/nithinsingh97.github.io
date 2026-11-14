@@ -35,10 +35,13 @@ SHORT_TITLE = "Web Scraping & Data Extraction Specialist"
 FIVERR = "https://www.fiverr.com/s/61zovaR"
 SINCE = 2019
 YEARS = "6+"
-ORDERS = "1,600+"          # historical, self-reported. Update when it changes
-REVIEWS = "966"            # historical Gig review count. Update when it changes
-STATS_NOTE = "Historical figures from my Fiverr account. For the current numbers, see my Fiverr Gig."
-CONTACT_EMAIL = "your-email@example.com"   # used by the contact form's mailto fallback
+ORDERS = "1,300+"          # public Fiverr gig figure; refresh periodically
+REVIEWS = "966"            # Fiverr gig review count; refresh periodically
+STATS_NOTE = "Figures shown for the featured Fiverr gig; check Fiverr for live totals."
+CONTACT_EMAIL = "nithinsingh1997@gmail.com"   # used by the contact form mailto fallback
+GIG_URL = "https://www.fiverr.com/nithinsingh97/do-web-scraping-data-mining-and-data-extraction-from-any-website"
+GIG_IMAGE = "https://fiverr-res.cloudinary.com/t_medium7_x2,q_auto,f_auto/gigs/142647533/original/a0cecb996428a58eb15910ebbba5d62bfb887036.png"
+GIG_RATING = "4.8/5"
 # Optional Google Form. Leave GOOGLE_FORM_ACTION empty to use the mailto fallback.
 # Action format: https://docs.google.com/forms/d/e/<FORM_ID>/formResponse
 GOOGLE_FORM_ACTION = ""
@@ -181,6 +184,7 @@ def header(root, path):
     </a>
     <nav class="nav" aria-label="Main"><ul>{links()}</ul></nav>
     <div class="header-cta">
+      <a class="btn btn-ghost btn-sm" href="mailto:{CONTACT_EMAIL}">Email</a>
       <a class="btn btn-ghost btn-sm" href="{root}contact.html">Get a Quote</a>
       {fiverr_btn(cls="btn btn-fiverr btn-sm")}
     </div>
@@ -213,6 +217,7 @@ def footer(root):
         <li><a href="{root}about.html">About {FIRST}</a></li>
         <li><a href="{root}portfolio.html">Case studies</a></li>
         <li><a href="{root}contact.html">Request a quote</a></li>
+        <li><a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a></li>
         <li><a href="{FIVERR}" target="_blank" rel="noopener">Fiverr Gig</a></li>
         <li><a href="{root}sitemap.xml">Sitemap</a></li>
       </ul></div>
@@ -381,165 +386,50 @@ HOME_FAQ = [
 # Pages
 # --------------------------------------------------------------------------
 def build_home():
-    r = ""
-    console = '''<div class="console" role="img" aria-label="Illustration: a Python scraper extracting business listings into a structured table">
-  <div class="console-bar"><i></i><i></i><i></i><span>extract_listings.py</span></div>
-  <div class="console-body" aria-hidden="true">
-    <div class="console-line"><span class="c-k">from</span> playwright.sync_api <span class="c-k">import</span> sync_playwright</div>
-    <div class="console-line"><span class="c-m"># 1. plan searches · 2. extract · 3. clean · 4. export</span></div>
-    <div class="console-line">rows = scrape(<span class="c-s">"category"</span>, areas=<span class="c-n">cities</span>)</div>
-    <div class="console-line">df = clean(rows).drop_duplicates(<span class="c-s">"url"</span>)</div>
-    <div class="console-line">df.to_excel(<span class="c-s">"leads.xlsx"</span>)  <span class="c-ok">✓ validated</span></div>
+    body = f"""
+<section class="premium-hero">
+ <div class="container premium-grid">
+  <div class="premium-copy">
+   <span class="premium-eyebrow"><span class="live-dot"></span> Fiverr Top Rated Seller · {YEARS}+ years of experience</span>
+   <h1>Need data from the web?<br><span>I'll extract it for you.</span></h1>
+   <p class="premium-lead">Custom web scraping, Python automation and lead generation. Get clean, structured data without the manual work.</p>
+   <div class="premium-actions">{fiverr_btn("Hire me on Fiverr", "btn btn-primary")}<a class="btn btn-ghost" href="mailto:{CONTACT_EMAIL}">Email me</a><a class="premium-text-link" href="portfolio.html">View work →</a></div>
+   <div class="premium-proof"><div><strong>{ORDERS}</strong><span>orders completed</span></div><div><strong>{GIG_RATING}</strong><span>Fiverr gig rating</span></div><div><strong>{REVIEWS}</strong><span>gig reviews</span></div></div>
+   <p class="premium-note">Figures shown for this gig; <a href="{FIVERR}" target="_blank" rel="noopener">see my live Fiverr profile</a>.</p>
   </div>
-  <div class="console-table" aria-hidden="true"><table>
-    <thead><tr><th>business</th><th>city</th><th>phone</th><th>website</th></tr></thead>
-    <tbody>
-      <tr><td>Example Dental Co.</td><td>Austin</td><td>+1 512 …</td><td>example.com</td></tr>
-      <tr><td>Sample Plumbing Ltd</td><td>Leeds</td><td>+44 113 …</td><td>sample.co.uk</td></tr>
-      <tr><td>Demo Realty</td><td>Toronto</td><td>+1 416 …</td><td>demo.ca</td></tr>
-      <tr><td>Placeholder GmbH</td><td>Berlin</td><td>+49 30 …</td><td>example.de</td></tr>
-    </tbody></table></div>
-  <span class="console-tag">Illustrative data</span>
-</div>'''
-    svc_cards = "".join(svc_card(r, s, i + 1) for i, s in enumerate(SERVICES))
-    featured = "".join(case_card(r, CASE[k]) for k in ["google-maps-business-data", "ecommerce-product-data", "large-scale-website-scraping"])
-    posts = "".join(post_card(r, p) for p in POSTS[:3])
-    faq_items = "".join(f'<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in HOME_FAQ)
-    body = f'''
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <span class="badge"><span class="pill">{icon("star")}</span>Fiverr Top Rated Seller · Freelancing since {SINCE}</span>
-      <h1>Turn Websites Into <span class="accent">Valuable Business Data</span></h1>
-      <p class="hero-name">{NAME}</p>
-      <p class="hero-title">{TITLE}</p>
-      <p class="lead">Professional Web Scraping, Python Data Extraction and Lead Generation Services for Businesses Worldwide.</p>
-      <div class="btn-row">
-        {fiverr_btn("Hire Me on Fiverr", "btn btn-primary")}
-        <a class="btn btn-ghost" href="contact.html">Request a Project Quote {icon("arrow")}</a>
-      </div>
-      <div class="hero-meta">
-        <div><strong>{ORDERS}</strong><span>Fiverr orders completed*</span></div>
-        <div><strong>{REVIEWS}</strong><span>Gig reviews*</span></div>
-        <div><strong>{YEARS} yrs</strong><span>Freelancing since {SINCE}</span></div>
-      </div>
-      <p class="fineprint">* {STATS_NOTE}</p>
-    </div>
-    <div class="hero-visual">
-      {console}
-      <div class="float-card float-1"><span class="ic">{icon("shield")}</span><div>Sample first<small>Approve before full run</small></div></div>
-      <div class="float-card float-2"><span class="ic">{icon("table")}</span><div>Excel · CSV · JSON<small>Your exact columns</small></div></div>
-    </div>
-  </div>
+  <a class="gig-feature" href="{GIG_URL}" target="_blank" rel="noopener" aria-label="View my web scraping Fiverr gig">
+   <div class="gig-feature-top"><span>MY FEATURED FIVERR GIG</span><span class="gig-rating">★ {GIG_RATING}</span></div>
+   <img src="{GIG_IMAGE}" alt="{NAME}'s primary Fiverr gig thumbnail for web scraping, data extraction and Python automation" fetchpriority="high">
+   <div class="gig-feature-bottom"><div><strong>Web Scraping &amp; Data Extraction</strong><span>Python · Automation · Lead Generation</span></div><span class="gig-open">View gig ↗</span></div>
+  </a>
+ </div>
 </section>
-
-<div class="trust"><div class="container trust-inner">
-  <span>{icon("star")}Fiverr Top Rated Seller</span>
-  <span>{icon("globe")}International client experience</span>
-  <span>{icon("code")}Custom Python, not generic tools</span>
-  <span>{icon("shield")}Responsible, public-data scraping</span>
-</div></div>
-
-<section class="section">
-  <div class="container split">
-    <div class="reveal">
-      <span class="eyebrow">Introduction</span>
-      <h2>Your data engineer for web data, without the agency overhead</h2>
-      <p class="lead">I'm {NAME}, a freelance web scraping and Python data extraction specialist. Since {SINCE} I've helped businesses turn websites, directories, maps, online stores and PDFs into clean, structured datasets they can act on.</p>
-      <p>Every project starts with the business question, not the tool: which records you need, which fields matter, and what format your team or CRM expects. Then I build a scraper for that specific source, validate the output and deliver a file that's ready to use.</p>
-      <div class="btn-row"><a class="btn btn-dark" href="about.html">More about me</a><a class="btn btn-ghost" href="portfolio.html">See case studies</a></div>
-    </div>
-    <aside class="stat-panel reveal" aria-label="Fiverr credentials">
-      <h3>Fiverr credentials</h3>
-      <div class="stats">
-        <div><strong>Top Rated</strong><span>Fiverr seller level</span></div>
-        <div><strong>{ORDERS}</strong><span>Orders completed*</span></div>
-        <div><strong>{REVIEWS}</strong><span>Gig reviews*</span></div>
-        <div><strong>{SINCE}</strong><span>Freelancing since</span></div>
-      </div>
-      {fiverr_btn("View my Fiverr Gig", "btn btn-primary")}
-      <p class="fineprint">* {STATS_NOTE}</p>
-    </aside>
-  </div>
-</section>
-
-<section class="section section-soft" aria-labelledby="services-h">
-  <div class="container">
-    <div class="section-head"><span class="eyebrow">Services</span><h2 id="services-h">Data extraction services for every source</h2>
-    <p class="lead">From a single directory to thousands of websites: custom scrapers, enrichment and clean delivery.</p></div>
-    <div class="grid grid-2">{svc_cards}</div>
-    <div class="btn-row mt-2"><a class="btn btn-dark" href="services.html">Explore all services</a>{fiverr_btn()}</div>
-  </div>
-</section>
-
-<section class="section" aria-labelledby="process-h">
-  <div class="container">
-    <div class="section-head center"><span class="eyebrow">How it works</span><h2 id="process-h">A simple, transparent process</h2></div>
-    <div class="process">
-      <div class="step reveal"><h3>Scope</h3><p>You share the source URL, fields, record estimate, format and deadline. I check the site and confirm what's possible.</p></div>
-      <div class="step reveal"><h3>Sample</h3><p>A small sample shows the exact columns and formatting, so you can approve before the full run.</p></div>
-      <div class="step reveal"><h3>Extract &amp; validate</h3><p>The full extraction runs with deduplication, normalisation and checks for missing values.</p></div>
-      <div class="step reveal"><h3>Deliver</h3><p>Clean Excel, CSV, JSON or Sheets, with source URLs, plus the script if you need re-runs.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-soft" aria-labelledby="tech-h">
-  <div class="container">
-    <div class="section-head"><span class="eyebrow">Technical expertise</span><h2 id="tech-h">The right tool for each website</h2>
-    <p class="lead">Fast HTTP extraction where possible, real browsers where necessary, and Pandas for clean results.</p></div>
-    {tech_grid()}
-  </div>
-</section>
-
-<section class="section" aria-labelledby="cases-h">
-  <div class="container">
-    <div class="section-head"><span class="eyebrow">Case studies</span><h2 id="cases-h">How projects are approached</h2>
-    <p class="lead">Technical walkthroughs of typical projects by category.</p></div>
-    <div class="grid grid-3">{featured}</div>
-    <div class="btn-row mt-2"><a class="btn btn-ghost" href="portfolio.html">View all case studies</a>{fiverr_btn()}</div>
-  </div>
-</section>
-
-<section class="section section-soft" aria-labelledby="why-h">
-  <div class="container split">
-    <div class="reveal">
-      <span class="eyebrow">Why hire me</span>
-      <h2 id="why-h">Clean data, clear communication, no surprises</h2>
-      <p class="lead">You're not buying a script. You're buying a dataset you can trust.</p>
-      <div class="btn-row">{fiverr_btn(cls="btn btn-primary")}<a class="btn btn-ghost" href="contact.html">Request a Project Quote</a></div>
-    </div>
-    <ul class="checklist reveal">
-      <li><strong>Custom-built for your source.</strong> Each scraper is written for the target site, not a one-size-fits-all tool.</li>
-      <li><strong>Sample before scale.</strong> Approve the columns and quality before the full run.</li>
-      <li><strong>Validated output.</strong> Deduplication, normalised formats and source URLs for traceability.</li>
-      <li><strong>Automation background.</strong> QA-grade Selenium and Playwright experience means reliable browser automation.</li>
-      <li><strong>Honest about limits.</strong> You'll hear up front what can and can't be collected.</li>
-      <li><strong>Responsible scraping.</strong> Public data, polite request rates and respect for data protection law.</li>
-    </ul>
-  </div>
-</section>
-
-<section class="section" aria-labelledby="faq-h">
-  <div class="container narrow">
-    <div class="section-head center"><span class="eyebrow">FAQ</span><h2 id="faq-h">Questions clients ask first</h2></div>
-    <div class="faq">{faq_items}</div>
-  </div>
-</section>
-
-<section class="section section-soft" aria-labelledby="blog-h">
-  <div class="container">
-    <div class="section-head"><span class="eyebrow">Guides</span><h2 id="blog-h">Web scraping guides for businesses</h2></div>
-    <div class="grid grid-3">{posts}</div>
-    <div class="btn-row mt-2"><a class="btn btn-ghost" href="blog.html">Read all articles</a></div>
-  </div>
-</section>
-{cta_band(r)}'''
+<section class="premium-trust"><div class="container premium-trust-inner"><span>✓ Fiverr Top Rated Seller</span><span>✓ {ORDERS} completed orders</span><span>✓ {GIG_RATING} gig rating</span><span>✓ Worldwide clients</span></div></section>
+<section class="section premium-services"><div class="container">
+ <div class="premium-section-head"><span class="eyebrow">WHAT I DO</span><h2>Get the data you need.<br><span>Skip the manual work.</span></h2><p>Practical data services for research, sales, operations and analysis.</p></div>
+ <div class="grid grid-3">
+  <a class="premium-service-card" href="services/website-web-scraping.html"><span class="service-icon">⌘</span><strong>Website scraping</strong><span>Extract structured data from websites and directories.</span><em>Explore service →</em></a>
+  <a class="premium-service-card" href="services/google-maps-data-extraction.html"><span class="service-icon">⌖</span><strong>Google Maps data</strong><span>Business listings, locations and available contact details.</span><em>Explore service →</em></a>
+  <a class="premium-service-card" href="services/b2b-lead-generation.html"><span class="service-icon">◎</span><strong>B2B lead generation</strong><span>Targeted company and prospect lists for your sales team.</span><em>Explore service →</em></a>
+  <a class="premium-service-card" href="services/ecommerce-product-scraping.html"><span class="service-icon">▤</span><strong>E-commerce scraping</strong><span>Products, prices, SKUs, variants and catalogue data.</span><em>Explore service →</em></a>
+  <a class="premium-service-card" href="services/real-estate-data-extraction.html"><span class="service-icon">⌂</span><strong>Real estate data</strong><span>Property listings, prices, features and agent details.</span><em>Explore service →</em></a>
+  <a class="premium-service-card" href="services/pdf-data-extraction.html"><span class="service-icon">▧</span><strong>PDF to Excel</strong><span>Turn tables and document information into usable files.</span><em>Explore service →</em></a>
+ </div>
+ <div class="premium-center"><a class="btn btn-ghost" href="services.html">See all 10 services →</a></div>
+</div></section>
+<section class="premium-process"><div class="container premium-process-grid">
+ <div><span class="eyebrow">SIMPLE PROCESS</span><h2>From website to<br><span>ready-to-use data.</span></h2><p>No complicated process. Just tell me what you need.</p></div>
+ <div class="process-mini"><div><b>01</b><section><strong>Share your requirements</strong><p>Send the source URL, fields and estimated records.</p></section></div><div><b>02</b><section><strong>Review a sample</strong><p>Check the data structure and quality before the full run.</p></section></div><div><b>03</b><section><strong>Receive clean data</strong><p>Get your finished Excel, CSV, JSON or Google Sheet.</p></section></div></div>
+</div></section>
+<section class="premium-cta"><div class="container premium-cta-inner">
+ <div><span class="eyebrow">LET'S WORK TOGETHER</span><h2>Have a data project?<br>Let's make it happen.</h2><p>Tell me what you need. I'll review it and get back to you.</p></div>
+ <div class="premium-actions">{fiverr_btn("Start on Fiverr", "btn btn-primary")}<a class="btn btn-ghost" href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a></div>
+</div></section>
+"""
     page("index.html",
          f"{NAME} | Web Scraping Specialist & Python Data Extraction Expert",
          "Nithin Singh, web scraping specialist and Fiverr Top Rated Seller: custom Python data extraction, Google Maps scraping and B2B lead generation worldwide.",
-         body, schema=[faq_schema(HOME_FAQ),
-                       {"@type": "ProfilePage", "@id": SITE_URL + "/#profile", "url": SITE_URL + "/",
+         body, schema=[{"@type": "ProfilePage", "@id": SITE_URL + "/#profile", "url": SITE_URL + "/",
                         "mainEntity": {"@id": PERSON_ID}, "isPartOf": {"@id": WEBSITE_ID}}])
 
 
