@@ -49,6 +49,26 @@
     items.forEach(function (el) { el.classList.add("in"); });
   }
 
+  // ---- Apply the shared visual system on every route ----
+  document.body.classList.add("studio-page");
+  var pageRevealTargets = document.querySelectorAll(
+    "body:not(.home-page) .page-hero .container > h1, body:not(.home-page) .section-head, body:not(.home-page) .card, body:not(.home-page) .pv-card, body:not(.home-page) .prose > h2, body:not(.home-page) .form-card, body:not(.home-page) .side-card"
+  );
+  pageRevealTargets.forEach(function (el) { el.classList.add("reveal"); });
+  if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var pageRevealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          pageRevealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px -28px 0px" });
+    pageRevealTargets.forEach(function (el) { pageRevealObserver.observe(el); });
+  } else {
+    pageRevealTargets.forEach(function (el) { el.classList.add("in"); });
+  }
+
   // ---- Homepage motion: staggered reveals, with reduced-motion support ----
   if (document.body.classList.contains("home-page")) {
     var revealTargets = document.querySelectorAll(
