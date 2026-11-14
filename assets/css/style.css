@@ -1399,3 +1399,14 @@ html,body.studio-page { background:#fff!important;color:#344054!important; }
 .home-page .site-footer .brand { color:#111827!important; }
 .studio-page:not(.home-page) .site-footer .brand-sub,
 .home-page .site-footer .brand-sub { color:#667085!important; }
+
+
+/* Homepage service-card contrast repair: enforce readable light-card text. */
+.home-page .premium-service-card { background:#fff!important;color:#344054!important; }
+.home-page .premium-service-card strong { color:#17233f!important;-webkit-text-fill-color:#17233f!important; }
+.home-page .premium-service-card>span:not(.service-icon) { color:#596780!important;-webkit-text-fill-color:#596780!important; }
+.home-page .premium-service-card em { color:#1748d6!important;-webkit-text-fill-color:#1748d6!important; }
+.home-page .premium-service-card .service-icon { color:#1748d6!important;background:#edf2ff!important; }
+.home-page .premium-service-card:after { background:rgba(36,92,255,.045)!important; }
+.home-page .premium-service-card:hover { border-color:#9db8ff!important;box-shadow:0 18px 38px rgba(20,43,93,.10)!important; }
+@media(prefers-reduced-motion:reduce) { .home-page .premium-service-card:hover { transform:none!important; } }
