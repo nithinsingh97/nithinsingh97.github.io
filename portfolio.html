@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Portfolio &amp; Web Scraping Case Studies | Nithin Singh</title>
-<meta name="description" content="Case studies: Google Maps extraction, e-commerce scraping, real estate data, business directories, PDF extraction, large-scale scraping and automation.">
+<meta name="description" content="Real dataset showcases from Google Maps business extraction, medical directory research, animal rescue directories and Yellow Pages data collection.">
 <meta name="author" content="Nithin Singh">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://nithinsingh97.github.io/portfolio.html">
@@ -83,53 +83,15 @@
   },
   {
    "@type": "CollectionPage",
-   "name": "Case studies",
+   "name": "Selected data projects",
    "url": "https://nithinsingh97.github.io/portfolio.html",
    "mainEntity": {
     "@type": "ItemList",
     "itemListElement": [
-     {
-      "@type": "ListItem",
-      "position": 1,
-      "url": "https://nithinsingh97.github.io/case-studies/google-maps-business-data.html",
-      "name": "Building a Local Business Lead Database from Google Maps"
-     },
-     {
-      "@type": "ListItem",
-      "position": 2,
-      "url": "https://nithinsingh97.github.io/case-studies/ecommerce-product-data.html",
-      "name": "Extracting a Complete Product Catalog with Variants and Images"
-     },
-     {
-      "@type": "ListItem",
-      "position": 3,
-      "url": "https://nithinsingh97.github.io/case-studies/real-estate-data-collection.html",
-      "name": "Collecting and Normalising Property Listings Across Portals"
-     },
-     {
-      "@type": "ListItem",
-      "position": 4,
-      "url": "https://nithinsingh97.github.io/case-studies/business-directory-extraction.html",
-      "name": "Complete Extraction of a Professional Business Directory"
-     },
-     {
-      "@type": "ListItem",
-      "position": 5,
-      "url": "https://nithinsingh97.github.io/case-studies/pdf-document-extraction.html",
-      "name": "Converting Batches of PDF Reports into Structured Excel Data"
-     },
-     {
-      "@type": "ListItem",
-      "position": 6,
-      "url": "https://nithinsingh97.github.io/case-studies/large-scale-website-scraping.html",
-      "name": "Scraping Thousands of Websites with One Configurable Pipeline"
-     },
-     {
-      "@type": "ListItem",
-      "position": 7,
-      "url": "https://nithinsingh97.github.io/case-studies/python-automation.html",
-      "name": "Automating a Repetitive Browser and Excel Workflow"
-     }
+     {"@type":"ListItem","position":1,"url":"https://nithinsingh97.github.io/portfolio.html#maps-project","name":"Local business listings and lead research"},
+     {"@type":"ListItem","position":2,"url":"https://nithinsingh97.github.io/portfolio.html#medical-project","name":"Medical professional directory extraction"},
+     {"@type":"ListItem","position":3,"url":"https://nithinsingh97.github.io/portfolio.html#rescue-project","name":"Animal rescue and shelter directory"},
+     {"@type":"ListItem","position":4,"url":"https://nithinsingh97.github.io/portfolio.html#yellowpages-project","name":"Yellow Pages professional listings"}
     ]
    }
   }
@@ -160,38 +122,121 @@
     <a class="btn btn-ghost" href="contact.html">Request a Project Quote</a>
   </div>
 </header>
-<main id="main">
+<main id="main" class="portfolio-showcase">
+<style>
+.portfolio-showcase{--pv-ink:#101a31;--pv-muted:#65728a;--pv-blue:#245dff;--pv-line:#dfe6f2}
+.portfolio-showcase .page-hero{padding:62px 0 58px;background:radial-gradient(ellipse at 88% 10%,rgba(36,93,255,.15),transparent 42%),linear-gradient(145deg,#f7f9ff,#fff 68%);border-bottom:1px solid var(--pv-line)}
+.portfolio-showcase .page-hero h1{max-width:850px;font-size:clamp(2.5rem,5vw,4.2rem);line-height:1.06;margin:.35rem 0 1rem;color:var(--pv-ink)}
+.portfolio-showcase .page-hero .lead{max-width:760px;font-size:1.2rem;line-height:1.65}
+.pv-proof{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:28px 0 26px}
+.pv-proof>div{padding:17px 18px;border:1px solid var(--pv-line);border-radius:15px;background:#fff;box-shadow:0 8px 24px rgba(20,40,80,.045)}
+.pv-proof strong{display:block;color:var(--pv-ink);font-size:1.35rem;line-height:1.25;font-weight:800}
+.pv-proof span{display:block;color:var(--pv-muted);font-size:.88rem;margin-top:4px}
+.pv-section-head{max-width:780px;margin-bottom:34px}
+.pv-section-head h2{font-size:clamp(2rem,3.4vw,2.8rem);margin-bottom:.55rem}
+.pv-section-head p{font-size:1.08rem;color:var(--pv-muted)}
+.pv-grid{display:grid;grid-template-columns:1fr;gap:22px}
+.pv-card{position:relative;overflow:hidden;background:#fff;border:1px solid var(--pv-line);border-radius:20px;box-shadow:0 12px 34px rgba(16,32,64,.055);transition:transform .2s,box-shadow .2s}
+.pv-card:hover{transform:translateY(-4px);box-shadow:0 22px 48px rgba(16,32,64,.11)}
+.pv-card-top{padding:24px 25px 14px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.pv-tag{font-size:.76rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#245dff}
+.pv-verified{font-size:.72rem;font-weight:750;color:#08734d;background:#e9f8f0;border:1px solid #c9efd9;padding:6px 10px;border-radius:999px;white-space:nowrap}
+.pv-card h3{font-size:1.42rem;margin:0 25px 9px;line-height:1.25}
+.pv-card-desc{margin:0 25px 18px;color:var(--pv-muted);font-size:1rem;line-height:1.65}
+.pv-count{margin:0 25px 18px;padding:18px 20px;border-radius:15px;background:linear-gradient(120deg,#10224b,#1c4ecb);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.pv-count strong{font-size:clamp(2rem,4vw,2.8rem);line-height:1;font-weight:850;letter-spacing:-.04em}
+.pv-count span{font-size:.85rem;color:#dce6ff;text-align:right;max-width:145px}
+.pv-preview{margin:0 25px 18px;border:1px solid #e5eaf3;border-radius:12px;overflow:hidden;background:#f9fbff}
+.pv-preview-label{padding:9px 12px;background:#eef3ff;color:#40516f;font-size:.76rem;font-weight:750;letter-spacing:.04em;text-transform:uppercase}
+.pv-preview table{width:100%;border-collapse:collapse;font-size:.78rem}
+.pv-preview th,.pv-preview td{text-align:left;padding:9px 10px;border-top:1px solid #e8edf5;white-space:nowrap}
+.pv-preview th{color:#64728b;font-weight:700;background:#fff}
+.pv-preview td{color:#7b879b}
+.pv-fields{display:flex;flex-wrap:wrap;gap:8px;padding:0 25px 23px}
+.pv-fields span{font-size:.8rem;color:#42516b;background:#f1f4fa;border:1px solid #e4eaf3;padding:6px 10px;border-radius:999px}
+.pv-note{margin-top:24px;padding:16px 18px;background:#f5f7fc;border:1px solid var(--pv-line);border-radius:14px;color:#53617a;font-size:.9rem}
+.pv-steps{display:grid;grid-template-columns:1fr;gap:14px}
+.pv-step{padding:22px;border:1px solid var(--pv-line);border-radius:16px;background:#fff}
+.pv-step b{display:block;color:#1f5eff;font-size:.8rem;letter-spacing:.1em;margin-bottom:8px}
+.pv-step strong{display:block;color:var(--pv-ink);font-size:1.08rem;margin-bottom:5px}
+.pv-step p{margin:0;color:var(--pv-muted);font-size:.95rem}
+.pv-cta{padding:42px 28px;border-radius:24px;background:linear-gradient(120deg,#1239aa,#245dff);color:#fff;text-align:center;box-shadow:0 22px 50px rgba(36,93,255,.22)}
+.pv-cta h2{color:#fff;font-size:clamp(1.9rem,3.5vw,2.7rem)}
+.pv-cta p{color:#e2eaff;font-size:1.05rem;max-width:650px;margin:0 auto 22px}
+.pv-cta .btn-ghost{border-color:#fff}
+@media(min-width:700px){.pv-proof{grid-template-columns:repeat(4,minmax(0,1fr))}.pv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pv-steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:520px){.portfolio-showcase .page-hero{padding:42px 0}.pv-card-top{padding:20px 18px 12px}.pv-card h3,.pv-card-desc{margin-left:18px;margin-right:18px}.pv-count{margin-left:18px;margin-right:18px}.pv-preview{margin-left:18px;margin-right:18px}.pv-fields{padding-left:18px;padding-right:18px}.pv-proof>div{padding:14px}.pv-proof strong{font-size:1.15rem}}
+</style>
 <section class="page-hero">
-  <div class="container">
-    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><span aria-current="page">Portfolio</span></li></ol></nav>
-    <span class="eyebrow">Portfolio</span>
-    <h1>Portfolio and Technical Case Studies</h1>
-    <p class="lead">How different kinds of data extraction projects are planned, built and validated, from Google Maps lead lists to PDF batches.</p>
-    <div class="btn-row"><a class="btn btn-fiverr" href="https://www.fiverr.com/s/61zovaR" target="_blank" rel="noopener" ><span class="dot" aria-hidden="true"></span>Hire Nithin on Fiverr<span class="sr-only"> (opens Fiverr in a new tab)</span></a><a class="btn btn-ghost" href="contact.html">Request a Project Quote</a></div>
+ <div class="container">
+  <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><span aria-current="page">Portfolio</span></li></ol></nav>
+  <span class="eyebrow">Selected data projects</span>
+  <h1>Real datasets. Clean extraction. <span style="color:#245dff">Business-ready data.</span></h1>
+  <p class="lead">A look at real spreadsheet deliverables from web scraping, directory research and data extraction work. Explore the datasets, fields collected and the scale of each delivery.</p>
+  <div class="pv-proof" aria-label="Freelance credentials">
+   <div><strong>Top Rated Seller</strong><span>Fiverr seller recognition</span></div>
+   <div><strong>1,300+</strong><span>Completed Fiverr orders*</span></div>
+   <div><strong>4.8/5 ★</strong><span>Gig rating · 966 reviews*</span></div>
+   <div><strong>Since 2019</strong><span>Freelance experience</span></div>
   </div>
+  <div class="btn-row"><a class="btn btn-fiverr" href="https://www.fiverr.com/s/61zovaR" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span>Hire Nithin on Fiverr</a><a class="btn btn-ghost" href="mailto:nithinsingh1997@gmail.com">Email Nithin</a><a class="btn btn-ghost" href="contact.html">Request a Quote</a></div>
+  <p style="font-size:.78rem;color:#68758b;margin:14px 0 0">*Fiverr profile figures shown as supplied for this gig; check the live profile for current totals.</p>
+ </div>
 </section>
-<section class="section"><div class="container">
-  <div class="placeholder-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5v.01"/></svg><div><strong>Sample case study.</strong> This page describes the typical technical approach for this type of project. Fields marked <span class="ph">like this</span> are placeholders to be replaced with real, verified project details. No client names, volumes or results are claimed here.</div></div>
-  <div class="grid grid-3"><article class="card case-card reveal"><span class="sample">Sample</span><span class="kicker">Google Maps business data extraction</span>
-  <h3><a href="case-studies/google-maps-business-data.html">Building a Local Business Lead Database from Google Maps</a></h3><p>Planning location-by-location searches, extracting public business listings and deduplicating them into a single lead list.</p>
-  <span class="more">Read case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></article><article class="card case-card reveal"><span class="sample">Sample</span><span class="kicker">E-commerce product data scraping</span>
-  <h3><a href="case-studies/ecommerce-product-data.html">Extracting a Complete Product Catalog with Variants and Images</a></h3><p>Mapping category trees, parsing embedded product JSON and delivering a variant-level catalog ready for import.</p>
-  <span class="more">Read case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></article><article class="card case-card reveal"><span class="sample">Sample</span><span class="kicker">Real estate data collection</span>
-  <h3><a href="case-studies/real-estate-data-collection.html">Collecting and Normalising Property Listings Across Portals</a></h3><p>Search-driven extraction from property websites with normalised units, prices and property types across sources.</p>
-  <span class="more">Read case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></article><article class="card case-card reveal"><span class="sample">Sample</span><span class="kicker">Business directory extraction</span>
-  <h3><a href="case-studies/business-directory-extraction.html">Complete Extraction of a Professional Business Directory</a></h3><p>Segmenting searches to get past result caps, following every profile link and standardising contact fields.</p>
-  <span class="more">Read case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></article><article class="card case-card reveal"><span class="sample">Sample</span><span class="kicker">PDF document extraction</span>
-  <h3><a href="case-studies/pdf-document-extraction.html">Converting Batches of PDF Reports into Structured Excel Data</a></h3><p>Detecting text versus scanned pages, extracting tables by position and flagging pages that need human review.</p>
-  <span class="more">Read case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></article><article class="card case-card reveal"><span class="sample">Sample</span><span class="kicker">Large-scale website scraping</span>
-  <h3><a href="case-studies/large-scale-website-scraping.html">Scraping Thousands of Websites with One Configurable Pipeline</a></h3><p>Running one extraction pipeline across a long list of different websites, with concurrency, retries and per-site error reporting.</p>
-  <span class="more">Read case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></article><article class="card case-card reveal"><span class="sample">Sample</span><span class="kicker">Python automation</span>
-  <h3><a href="case-studies/python-automation.html">Automating a Repetitive Browser and Excel Workflow</a></h3><p>Replacing a daily manual routine of logging in, downloading reports and merging spreadsheets with one script.</p>
-  <span class="more">Read case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></article></div>
-</div></section>
-<section class="section"><div class="container"><div class="cta-band reveal">
-  <h2>Have a similar project?</h2><p>Share the website, the fields you need and a rough record count. You'll get a clear plan, a quote and a sample before the full run.</p>
-  <div class="btn-row"><a class="btn btn-fiverr" href="https://www.fiverr.com/s/61zovaR" target="_blank" rel="noopener" ><span class="dot" aria-hidden="true"></span>Hire Nithin on Fiverr<span class="sr-only"> (opens Fiverr in a new tab)</span></a><a class="btn btn-ghost" href="contact.html">Request a Project Quote</a></div>
-</div></div></section>
+<section class="section">
+ <div class="container">
+  <div class="pv-section-head"><span class="eyebrow">Featured work</span><h2>Examples of delivered data</h2><p>Each project card highlights the actual workbook structure and record count. Preview values are intentionally masked; no personal contact details are displayed.</p></div>
+  <div class="pv-grid">
+   <article class="pv-card" id="maps-project">
+    <div class="pv-card-top"><span class="pv-tag">Google Maps · Business data</span><span class="pv-verified">Actual workbook</span></div>
+    <h3>Local business listings &amp; lead research</h3>
+    <p class="pv-card-desc">A location-focused business dataset organised for prospecting and market research, with business identity, location, contact and reputation fields.</p>
+    <div class="pv-count"><strong>6,698</strong><span>business records<br>in the supplied workbook</span></div>
+    <div class="pv-preview"><div class="pv-preview-label">Workbook column preview · values masked</div><table><thead><tr><th>Business name</th><th>Address</th><th>Rating</th><th>Category</th></tr></thead><tbody><tr><td>••••••••••</td><td>••••••••••</td><td>—</td><td>••••••</td></tr><tr><td>••••••••••</td><td>••••••••••</td><td>—</td><td>••••••</td></tr></tbody></table></div>
+    <div class="pv-fields"><span>Business name</span><span>Address</span><span>Phone</span><span>Website</span><span>Rating</span><span>Review count</span><span>Category</span></div>
+   </article>
+   <article class="pv-card" id="medical-project">
+    <div class="pv-card-top"><span class="pv-tag">Medical directory · Professional data</span><span class="pv-verified">Actual workbook</span></div>
+    <h3>Medical professional directory extraction</h3>
+    <p class="pv-card-desc">A structured professional directory workbook with registration identifiers, specialties, practice locations and clinic contact fields.</p>
+    <div class="pv-count"><strong>6,004</strong><span>professional directory records<br>in the supplied workbook</span></div>
+    <div class="pv-preview"><div class="pv-preview-label">Workbook column preview · values masked</div><table><thead><tr><th>Professional</th><th>Registration ID</th><th>Specialty</th><th>City</th></tr></thead><tbody><tr><td>••••••••••</td><td>••••••</td><td>••••••••</td><td>••••••</td></tr><tr><td>••••••••••</td><td>••••••</td><td>••••••••</td><td>••••••</td></tr></tbody></table></div>
+    <div class="pv-fields"><span>Name</span><span>Registration ID</span><span>Specialty</span><span>Address</span><span>Clinic</span><span>Phone</span><span>Fax</span></div>
+   </article>
+   <article class="pv-card" id="rescue-project">
+    <div class="pv-card-top"><span class="pv-tag">Animal rescue · Organisation research</span><span class="pv-verified">Actual workbook</span></div>
+    <h3>Animal rescue &amp; shelter directory</h3>
+    <p class="pv-card-desc">A cleaned directory of rescue organisations with shelter identifiers, geographic fields and website/source references.</p>
+    <div class="pv-count"><strong>4,390</strong><span>organisation records<br>in the supplied workbook</span></div>
+    <div class="pv-preview"><div class="pv-preview-label">Workbook column preview · values masked</div><table><thead><tr><th>Rescue name</th><th>Shelter ID</th><th>City</th><th>State</th></tr></thead><tbody><tr><td>••••••••••</td><td>••••••</td><td>••••••</td><td>••</td></tr><tr><td>••••••••••</td><td>••••••</td><td>••••••</td><td>••</td></tr></tbody></table></div>
+    <div class="pv-fields"><span>Rescue name</span><span>Shelter ID</span><span>City</span><span>State</span><span>Website</span><span>Source page</span></div>
+   </article>
+   <article class="pv-card" id="yellowpages-project">
+    <div class="pv-card-top"><span class="pv-tag">Yellow Pages · Directory scraping</span><span class="pv-verified">Actual workbook</span></div>
+    <h3>Yellow Pages professional listings</h3>
+    <p class="pv-card-desc">A focused directory extraction containing listing names, street addresses, location details, phone numbers and website/profile links.</p>
+    <div class="pv-count"><strong>30</strong><span>listing records<br>in the supplied workbook</span></div>
+    <div class="pv-preview"><div class="pv-preview-label">Workbook column preview · values masked</div><table><thead><tr><th>Name</th><th>Street address</th><th>Location</th><th>Phone</th></tr></thead><tbody><tr><td>••••••••••</td><td>••••••••••</td><td>••••••</td><td>••••••</td></tr><tr><td>••••••••••</td><td>••••••••••</td><td>••••••</td><td>••••••</td></tr></tbody></table></div>
+    <div class="pv-fields"><span>Name</span><span>Street address</span><span>Location</span><span>Phone</span><span>Website</span><span>Profile link</span></div>
+   </article>
+  </div>
+  <div class="pv-note"><strong>About these examples:</strong> Record totals are calculated from the uploaded workbooks, excluding their header rows. They describe the supplied files, not independently audited client outcomes. The medical directory preview is masked to avoid exposing individual professional contact details. Client identities and confidential information are not published.</div>
+ </div>
+</section>
+<section class="section section-soft">
+ <div class="container">
+  <div class="pv-section-head"><span class="eyebrow">How I work</span><h2>From source website to usable spreadsheet</h2><p>A straightforward process focused on the fields you need and the format your team can use.</p></div>
+  <div class="pv-steps">
+   <div class="pv-step"><b>01 / SCOPE</b><strong>Define the data</strong><p>Confirm source websites, required columns, geography and estimated record volume.</p></div>
+   <div class="pv-step"><b>02 / EXTRACT</b><strong>Collect and validate</strong><p>Build an appropriate extraction workflow, standardise fields and check for duplicates or missing values.</p></div>
+   <div class="pv-step"><b>03 / DELIVER</b><strong>Receive structured files</strong><p>Deliver organised Excel, CSV or JSON data with source references where available.</p></div>
+  </div>
+ </div>
+</section>
+<section class="section"><div class="container"><div class="pv-cta">
+ <span class="eyebrow" style="color:#dce6ff">Have a project in mind?</span><h2>Need a dataset like these?</h2><p>Send me the website, the fields you need and an estimated record count. I'll review your requirements and suggest a practical extraction plan.</p>
+ <div class="btn-row" style="justify-content:center"><a class="btn btn-fiverr" href="https://www.fiverr.com/s/61zovaR" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span>Hire Nithin on Fiverr</a><a class="btn btn-ghost" href="mailto:nithinsingh1997@gmail.com">nithinsingh1997@gmail.com</a></div>
+ </div></div></section>
 </main>
 <footer class="site-footer">
   <div class="container">
