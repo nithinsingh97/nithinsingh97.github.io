@@ -1307,3 +1307,67 @@ body.studio-page{font-size:17px;line-height:1.72}
 .studio-page .nav a[aria-current=page]{
  color:#1748d6!important;
 }
+
+
+/* FINAL SITE-WIDE CONTRAST OVERRIDES — tested against current page components */
+/* Home-page proof/stat cards sit on white: use saturated blue, never pale lime. */
+.home-page .premium-proof strong,
+.home-page .premium-proof>div strong,
+.studio-page .pv-proof strong,
+.studio-page .portfolio-showcase .pv-proof strong,
+.studio-page .portfolio-showcase .pv-proof>div strong{
+ color:#1748d6!important;
+}
+.home-page .premium-proof span,
+.home-page .premium-proof>div span,
+.studio-page .pv-proof span,
+.studio-page .portfolio-showcase .pv-proof span,
+.studio-page .portfolio-showcase .pv-proof>div span{
+ color:#596780!important;
+}
+/* Blog category labels: readable blue on the white cards. */
+.studio-page .post-card .post-meta .cat,
+.studio-page .post-meta .cat,
+.studio-page .cat{
+ color:#1748d6!important;
+}
+/* About checklist labels and copy must both remain legible. */
+.studio-page .checklist li,
+.studio-page .checklist li strong,
+.studio-page .checklist li b{
+ color:#344054!important;
+}
+/* All blue gradient CTA bands use white text, including nested spans. */
+.studio-page .cta-band,
+.studio-page .cta-band h2,
+.studio-page .cta-band h3,
+.studio-page .cta-band p,
+.studio-page .cta-band .eyebrow,
+.studio-page .cta-band .premium-eyebrow{
+ color:#fff!important;
+}
+.studio-page .cta-band p{
+ color:rgba(255,255,255,.96)!important;
+}
+.studio-page .cta-band .btn-ghost{
+ color:#fff!important;
+ background:rgba(255,255,255,.14)!important;
+ border-color:rgba(255,255,255,.65)!important;
+}
+.studio-page .cta-band .btn-primary,
+.studio-page .cta-band .btn-fiverr{
+ color:#123cae!important;
+ background:#fff!important;
+ border-color:#fff!important;
+}
+/* Dark CTA copy on the home page is on a light panel, not the blue band. */
+.home-page .premium-cta h2{color:#111827!important}
+.home-page .premium-cta p{color:#475467!important}
+.home-page .premium-cta .eyebrow{color:#1748d6!important}
+/* Keep ordinary text on light backgrounds dark and supporting text readable. */
+.studio-page .page-hero .lead,
+.studio-page .card p,
+.studio-page .post-card p,
+.studio-page .side-card p{
+ color:#475467;
+}
