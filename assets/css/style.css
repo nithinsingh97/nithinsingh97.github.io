@@ -1714,3 +1714,92 @@ html,body.studio-page { background:#fff!important;color:#344054!important; }
   border: 0 !important;
 }
 
+/* FINAL BLOG SIDEBAR + AUTHOR ALIGNMENT FIX.
+   Scope to .sidebar because the service card lives inside <aside>, not the article column. */
+.studio-page:not(.home-page) .sidebar .side-card.dark {
+  background: #0d1730 !important;
+  background-image: linear-gradient(160deg,#0d1730,#162d66) !important;
+  border: 1px solid #263a5d !important;
+  color: #e5edff !important;
+}
+.studio-page:not(.home-page) .sidebar .side-card.dark h2,
+.studio-page:not(.home-page) .sidebar .side-card.dark h3 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+}
+.studio-page:not(.home-page) .sidebar .side-card.dark p {
+  color: #e5edff !important;
+  -webkit-text-fill-color: #e5edff !important;
+  opacity: 1 !important;
+}
+.studio-page:not(.home-page) .sidebar .side-card.dark > a.btn {
+  display: flex !important;
+  width: 100% !important;
+  min-height: 46px !important;
+  margin: 10px 0 0 !important;
+  padding: 12px 16px !important;
+  box-sizing: border-box !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 9px !important;
+  border-radius: 10px !important;
+  font-size: .92rem !important;
+  font-weight: 750 !important;
+  line-height: 1.2 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+}
+.studio-page:not(.home-page) .sidebar .side-card.dark > a.btn-primary,
+.studio-page:not(.home-page) .sidebar .side-card.dark > a.btn-primary:link,
+.studio-page:not(.home-page) .sidebar .side-card.dark > a.btn-primary:visited,
+.studio-page:not(.home-page) .sidebar .side-card.dark > a.btn-primary:hover {
+  background: #245cff !important;
+  border: 1px solid #245cff !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+.studio-page:not(.home-page) .sidebar .side-card.dark > a.btn-primary * {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+.studio-page:not(.home-page) .sidebar .side-card.dark > a.btn-ghost,
+.studio-page:not(.home-page) .sidebar .side-card.dark > a.btn-ghost:link,
+.studio-page:not(.home-page) .sidebar .side-card.dark > a.btn-ghost:visited,
+.studio-page:not(.home-page) .sidebar .side-card.dark > a.btn-ghost:hover {
+  background: #ffffff !important;
+  border: 1px solid #d0d9e8 !important;
+  color: #172033 !important;
+  -webkit-text-fill-color: #172033 !important;
+}
+.studio-page:not(.home-page) .sidebar .side-card.dark > a.btn .sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0,0,0,0) !important;
+  white-space: nowrap !important;
+}
+
+/* Put the author avatar level with the heading, not above a heading's default top margin. */
+.studio-page:not(.home-page) main .author-box {
+  align-items: flex-start !important;
+}
+.studio-page:not(.home-page) main .author-box > .avatar {
+  flex: 0 0 56px !important;
+  margin: 0 !important;
+  align-self: flex-start !important;
+}
+.studio-page:not(.home-page) main .author-box > div {
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.studio-page:not(.home-page) main .author-box > div > h2 {
+  margin: 0 0 .45rem !important;
+  padding: 0 !important;
+  line-height: 1.25 !important;
+}
+
