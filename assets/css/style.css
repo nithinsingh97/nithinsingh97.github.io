@@ -1576,3 +1576,34 @@ html,body.studio-page { background:#fff!important;color:#344054!important; }
   -webkit-text-fill-color: #9fc1ff !important;
 }
 
+/* AUTHOR BIO CARD: this is .author-box (not .side-card.dark).
+   Preserve its navy design and force high-contrast typography. */
+.studio-page:not(.home-page) main .author-box {
+  background: #0d1729 !important;
+  border: 1px solid #263a5d !important;
+  color: #f8fbff !important;
+}
+.studio-page:not(.home-page) main .author-box h2,
+.studio-page:not(.home-page) main .author-box h3,
+.studio-page:not(.home-page) main .author-box p,
+.studio-page:not(.home-page) main .author-box div {
+  color: #f8fbff !important;
+  -webkit-text-fill-color: #f8fbff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  text-shadow: none !important;
+}
+.studio-page:not(.home-page) main .author-box h2 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+.studio-page:not(.home-page) main .author-box p {
+  color: #dbe6f8 !important;
+  -webkit-text-fill-color: #dbe6f8 !important;
+}
+.studio-page:not(.home-page) main .author-box p a {
+  color: #8db7ff !important;
+  -webkit-text-fill-color: #8db7ff !important;
+  text-decoration: underline !important;
+}
+
