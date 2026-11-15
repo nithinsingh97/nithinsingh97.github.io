@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1000" viewBox="0 0 1500 1000">
+<rect width="1500" height="1000" fill="#f3f6fb"/>
+<rect x="48" y="40" width="1404" height="920" rx="28" fill="#fff" stroke="#dbe3ef" stroke-width="2"/>
+<text x="92" y="105" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#245dff">LOCAL.CH · PYTHON / SELENIUM PROJECT</text>
+<text x="92" y="158" font-family="Arial,sans-serif" font-size="36" font-weight="700" fill="#14213d">Directory extraction workflow</text>
+<text x="92" y="198" font-family="Arial,sans-serif" font-size="18" fill="#66758d">Workflow reconstructed from the supplied industry_scrapper.py source file</text>
+<g font-family="Arial,sans-serif">
+<g fill="#edf3ff" stroke="#c9d8fa" stroke-width="2">
+<rect x="92" y="245" width="235" height="110" rx="16"/><rect x="390" y="245" width="235" height="110" rx="16"/><rect x="688" y="245" width="235" height="110" rx="16"/><rect x="986" y="245" width="235" height="110" rx="16"/><rect x="1280" y="245" width="125" height="110" rx="16" fill="#e8f8f0" stroke="#b8e5cb"/>
+</g>
+<g fill="#1c2c4b" font-size="20" font-weight="700" text-anchor="middle"><text x="209" y="289">Category index</text><text x="507" y="289">Category links</text><text x="805" y="289">Top city links</text><text x="1103" y="289">Listing pages</text><text x="1342" y="289">Excel</text></g>
+<g fill="#61728c" font-size="15" text-anchor="middle"><text x="209" y="322">A–Z paths</text><text x="507" y="322">Directory groups</text><text x="805" y="322">Location pages</text><text x="1103" y="322">Pagination</text><text x="1342" y="322">.xlsx</text></g>
+<g stroke="#6d87b8" stroke-width="3" fill="none"><path d="M327 300h55m-12 -9 12 9 -12 9"/><path d="M625 300h55m-12 -9 12 9 -12 9"/><path d="M923 300h55m-12 -9 12 9 -12 9"/><path d="M1221 300h51m-12 -9 12 9 -12 9"/></g>
+<rect x="92" y="405" width="1313" height="195" rx="18" fill="#f8faff" stroke="#dce5f2"/>
+<text x="125" y="450" font-size="22" font-weight="700" fill="#14213d">Business detail fields handled</text>
+<g fill="#fff" stroke="#d8e1ef"><rect x="125" y="475" width="215" height="46" rx="11"/><rect x="355" y="475" width="215" height="46" rx="11"/><rect x="585" y="475" width="215" height="46" rx="11"/><rect x="815" y="475" width="215" height="46" rx="11"/><rect x="1045" y="475" width="150" height="46" rx="11"/><rect x="1210" y="475" width="160" height="46" rx="11"/></g>
+<g fill="#34445f" font-size="17" text-anchor="middle"><text x="232" y="504">Business name</text><text x="462" y="504">Street / address</text><text x="692" y="504">Postal code</text><text x="922" y="504">City</text><text x="1120" y="504">Contacts</text><text x="1290" y="504">Categories</text></g>
+<text x="125" y="562" font-size="17" fill="#61728c">The source also collects language values from listing details.</text>
+<text x="92" y="666" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#14213d">Source-code excerpt · industry_scrapper.py</text>
+<rect x="92" y="692" width="1313" height="220" rx="16" fill="#101827"/>
+<circle cx="126" cy="725" r="7" fill="#ff6b6b"/><circle cx="151" cy="725" r="7" fill="#ffd166"/><circle cx="176" cy="725" r="7" fill="#06d6a0"/>
+<g font-family="Consolas,monospace" font-size="18" fill="#dbe7ff">
+<text x="126" y="770"><tspan fill="#8ab4ff">data</tspan><tspan>["business_name"] = business_name.text</tspan></text>
+<text x="126" y="805"><tspan fill="#8ab4ff">data</tspan><tspan>["street"] = street</tspan></text>
+<text x="126" y="840"><tspan fill="#8ab4ff">data</tspan><tspan>["postal_code"] = postal_code</tspan></text>
+<text x="126" y="875"><tspan fill="#8ab4ff">data</tspan><tspan>["category"] = category_list; </tspan><tspan fill="#8ab4ff">data</tspan><tspan>["languages"] = language_list</tspan></text>
+</g>
+<text x="92" y="936" font-family="Arial,sans-serif" font-size="15" fill="#718099">Illustrative technical visual based on the supplied source code; not a live browser capture or execution log.</text>
+</g></svg>
