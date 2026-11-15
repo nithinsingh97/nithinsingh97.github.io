@@ -1720,3 +1720,39 @@ html,body.studio-page { background:#fff!important;color:#344054!important; }
     white-space: normal !important;
   }
 }
+
+
+/* UI polish: featured gig contrast, case-study tags and sticky-anchor spacing. */
+.home-page .gig-feature-bottom strong {
+  color: #172033 !important;
+  -webkit-text-fill-color: #172033 !important;
+}
+.home-page .gig-feature-bottom div > span {
+  color: #596780 !important;
+  -webkit-text-fill-color: #596780 !important;
+}
+.home-page .gig-feature-bottom .gig-open {
+  color: #1748d6 !important;
+  -webkit-text-fill-color: #1748d6 !important;
+}
+.studio-page .breadcrumbs,
+.studio-page .breadcrumbs a,
+.studio-page .breadcrumbs [aria-current="page"] {
+  color: #475467 !important;
+  -webkit-text-fill-color: #475467 !important;
+}
+.studio-page .breadcrumbs [aria-current="page"] {
+  font-weight: 600 !important;
+}
+.studio-page .tags li {
+  background: #edf2ff !important;
+  border-color: #cbd9fb !important;
+  color: #243b70 !important;
+  -webkit-text-fill-color: #243b70 !important;
+}
+.studio-page main h2[id],
+.studio-page main h3[id],
+.studio-page article h2[id],
+.studio-page article h3[id] {
+  scroll-margin-top: 104px;
+}
