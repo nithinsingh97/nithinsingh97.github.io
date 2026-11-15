@@ -1500,3 +1500,52 @@ html,body.studio-page { background:#fff!important;color:#344054!important; }
   -webkit-text-fill-color: #dbeafe !important;
 }
 
+/* FINAL FIX: inner-page CTA markup uses .pv-cta (not .cta-band).
+   The legacy inner-page selectors use !important and higher specificity,
+   so explicitly override those selectors for colored panels. */
+.studio-page:not(.home-page) .pv-cta {
+  background: linear-gradient(120deg,#1239aa,#245dff) !important;
+  color: #ffffff !important;
+}
+.studio-page:not(.home-page) .pv-cta h1,
+.studio-page:not(.home-page) .pv-cta h2,
+.studio-page:not(.home-page) .pv-cta h3,
+.studio-page:not(.home-page) .pv-cta .eyebrow,
+.studio-page:not(.home-page) .pv-cta p,
+.studio-page:not(.home-page) .pv-cta span:not(.dot),
+.studio-page:not(.home-page) .pv-cta strong {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+.studio-page:not(.home-page) .pv-cta p {
+  color: #f4f7ff !important;
+  -webkit-text-fill-color: #f4f7ff !important;
+}
+.studio-page:not(.home-page) .pv-cta .btn-fiverr,
+.studio-page:not(.home-page) .pv-cta .btn-primary {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #1748d6 !important;
+  -webkit-text-fill-color: #1748d6 !important;
+}
+.studio-page:not(.home-page) .pv-cta .btn-ghost {
+  background: rgba(255,255,255,.14) !important;
+  border-color: rgba(255,255,255,.8) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* The generic light-card paragraph rule must not wash out dark callout cards. */
+.studio-page:not(.home-page) .side-card.dark,
+.studio-page:not(.home-page) .side-card.dark h2,
+.studio-page:not(.home-page) .side-card.dark h3,
+.studio-page:not(.home-page) .side-card.dark p,
+.studio-page:not(.home-page) .side-card.dark li,
+.studio-page:not(.home-page) .side-card.dark a:not(.btn) {
+  color: #f8fbff !important;
+  -webkit-text-fill-color: #f8fbff !important;
+  opacity: 1 !important;
+}
+
