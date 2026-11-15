@@ -1486,183 +1486,171 @@ html,body.studio-page { background:#fff!important;color:#344054!important; }
   border-color: #475467 !important;
 }
 
-/* Dark side panels retain a high-contrast text palette. */
-.studio-page .side-card.dark,
-.studio-page .side-card.dark p,
-.studio-page .side-card.dark li,
-.studio-page .side-card.dark h2,
-.studio-page .side-card.dark h3 {
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-}
-.studio-page .side-card.dark a:not(.btn) {
-  color: #dbeafe !important;
-  -webkit-text-fill-color: #dbeafe !important;
-}
+/* --------------------------------------------------------------------------
+   AUTHOR BIO + SIDEBAR CTA COMPONENTS
+   One shared, explicit contrast and alignment system for article layouts.
+   -------------------------------------------------------------------------- */
 
-/* FINAL FIX: inner-page CTA markup uses .pv-cta (not .cta-band).
-   The legacy inner-page selectors use !important and higher specificity,
-   so explicitly override those selectors for colored panels. */
-.studio-page:not(.home-page) .pv-cta {
-  background: linear-gradient(120deg,#1239aa,#245dff) !important;
-  color: #ffffff !important;
-}
-.studio-page:not(.home-page) .pv-cta h1,
-.studio-page:not(.home-page) .pv-cta h2,
-.studio-page:not(.home-page) .pv-cta h3,
-.studio-page:not(.home-page) .pv-cta .eyebrow,
-.studio-page:not(.home-page) .pv-cta p,
-.studio-page:not(.home-page) .pv-cta span:not(.dot),
-.studio-page:not(.home-page) .pv-cta strong {
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-  opacity: 1 !important;
-  text-shadow: none !important;
-}
-.studio-page:not(.home-page) .pv-cta p {
-  color: #f4f7ff !important;
-  -webkit-text-fill-color: #f4f7ff !important;
-}
-.studio-page:not(.home-page) .pv-cta .btn-fiverr,
-.studio-page:not(.home-page) .pv-cta .btn-primary {
-  background: #ffffff !important;
-  border-color: #ffffff !important;
-  color: #1748d6 !important;
-  -webkit-text-fill-color: #1748d6 !important;
-}
-.studio-page:not(.home-page) .pv-cta .btn-ghost {
-  background: rgba(255,255,255,.14) !important;
-  border-color: rgba(255,255,255,.8) !important;
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-}
-
-/* The generic light-card paragraph rule must not wash out dark callout cards. */
-.studio-page:not(.home-page) .side-card.dark,
-.studio-page:not(.home-page) .side-card.dark h2,
-.studio-page:not(.home-page) .side-card.dark h3,
-.studio-page:not(.home-page) .side-card.dark p,
-.studio-page:not(.home-page) .side-card.dark li,
-.studio-page:not(.home-page) .side-card.dark a:not(.btn) {
-  color: #f8fbff !important;
-  -webkit-text-fill-color: #f8fbff !important;
-  opacity: 1 !important;
-}
-
-/* BLOG CALLOUT FINAL OVERRIDE: force readable text on the dark author/service panel. */
-.studio-page:not(.home-page) main .side-card.dark > h2,
-.studio-page:not(.home-page) main .side-card.dark > h3,
-.studio-page:not(.home-page) main .side-card.dark > p,
-.studio-page:not(.home-page) main .side-card.dark > ul,
-.studio-page:not(.home-page) main .side-card.dark > ul li,
-.studio-page:not(.home-page) main .side-card.dark > a:not(.btn) {
-  color: #f8fbff !important;
-  -webkit-text-fill-color: #f8fbff !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  text-shadow: none !important;
-}
-.studio-page:not(.home-page) main .side-card.dark > h2,
-.studio-page:not(.home-page) main .side-card.dark > h3 {
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-}
-.studio-page:not(.home-page) main .side-card.dark > p {
-  color: #dbe6f8 !important;
-  -webkit-text-fill-color: #dbe6f8 !important;
-}
-.studio-page:not(.home-page) main .side-card.dark > a:not(.btn) {
-  color: #9fc1ff !important;
-  -webkit-text-fill-color: #9fc1ff !important;
-}
-
-/* AUTHOR BIO CARD: this is .author-box (not .side-card.dark).
-   Preserve its navy design and force high-contrast typography. */
-.studio-page:not(.home-page) main .author-box {
-  background: #0d1729 !important;
+/* Dark sidebar card: preserve the navy surface and readable text. */
+.studio-page .sidebar .side-card.dark,
+.studio-page main .side-card.dark,
+.home-page .side-card.dark {
+  background: linear-gradient(160deg,#0d1730,#162d66) !important;
   border: 1px solid #263a5d !important;
-  color: #f8fbff !important;
+  color: #e5edff !important;
+  box-shadow: 0 12px 32px rgba(13,23,48,.16) !important;
 }
-.studio-page:not(.home-page) main .author-box h2,
-.studio-page:not(.home-page) main .author-box h3,
-.studio-page:not(.home-page) main .author-box p,
-.studio-page:not(.home-page) main .author-box div {
-  color: #f8fbff !important;
-  -webkit-text-fill-color: #f8fbff !important;
+.studio-page .sidebar .side-card.dark h2,
+.studio-page .sidebar .side-card.dark h3,
+.studio-page .sidebar .side-card.dark p,
+.studio-page .sidebar .side-card.dark li,
+.studio-page main .side-card.dark h2,
+.studio-page main .side-card.dark h3,
+.studio-page main .side-card.dark p,
+.studio-page main .side-card.dark li,
+.home-page .side-card.dark h2,
+.home-page .side-card.dark h3,
+.home-page .side-card.dark p,
+.home-page .side-card.dark li {
   opacity: 1 !important;
   visibility: visible !important;
   text-shadow: none !important;
 }
-.studio-page:not(.home-page) main .author-box h2 {
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
+.studio-page .sidebar .side-card.dark h2,
+.studio-page .sidebar .side-card.dark h3,
+.studio-page main .side-card.dark h2,
+.studio-page main .side-card.dark h3,
+.home-page .side-card.dark h2,
+.home-page .side-card.dark h3 {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
 }
-.studio-page:not(.home-page) main .author-box p {
-  color: #dbe6f8 !important;
-  -webkit-text-fill-color: #dbe6f8 !important;
+.studio-page .sidebar .side-card.dark p,
+.studio-page .sidebar .side-card.dark li,
+.studio-page main .side-card.dark p,
+.studio-page main .side-card.dark li,
+.home-page .side-card.dark p,
+.home-page .side-card.dark li {
+  color: #e5edff !important;
+  -webkit-text-fill-color: #e5edff !important;
 }
-.studio-page:not(.home-page) main .author-box p a {
-  color: #8db7ff !important;
-  -webkit-text-fill-color: #8db7ff !important;
-  text-decoration: underline !important;
+.studio-page .sidebar .side-card.dark a:not(.btn),
+.studio-page main .side-card.dark a:not(.btn),
+.home-page .side-card.dark a:not(.btn) {
+  color: #a9c8ff !important;
+  -webkit-text-fill-color: #a9c8ff !important;
 }
 
-/* BLOG SIDEBAR CTA: consistent button contrast, sizing and label alignment. */
-.studio-page:not(.home-page) main .side-card.dark > .btn {
+/* Sidebar buttons fill the card width and keep their labels centered. */
+.studio-page .sidebar .side-card.dark > a.btn,
+.studio-page main .side-card.dark > a.btn,
+.home-page .side-card.dark > a.btn {
   display: flex !important;
   width: 100% !important;
   min-height: 46px !important;
   box-sizing: border-box !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 10px !important;
+  gap: 9px !important;
   margin: 10px 0 0 !important;
   padding: 12px 16px !important;
-  text-align: center !important;
-  line-height: 1.25 !important;
-  white-space: normal !important;
+  border-radius: 10px !important;
+  font-size: .92rem !important;
   font-weight: 750 !important;
+  line-height: 1.25 !important;
+  text-align: center !important;
   text-decoration: none !important;
+  white-space: normal !important;
 }
-.studio-page:not(.home-page) main .side-card.dark > .btn-primary,
-.studio-page:not(.home-page) main .side-card.dark > .btn-primary:link,
-.studio-page:not(.home-page) main .side-card.dark > .btn-primary:visited,
-.studio-page:not(.home-page) main .side-card.dark > .btn-primary:hover,
-.studio-page:not(.home-page) main .side-card.dark > .btn-primary:focus {
+.studio-page .sidebar .side-card.dark > a.btn-primary,
+.studio-page .sidebar .side-card.dark > a.btn-primary:link,
+.studio-page .sidebar .side-card.dark > a.btn-primary:visited,
+.studio-page .sidebar .side-card.dark > a.btn-primary:hover,
+.studio-page main .side-card.dark > a.btn-primary,
+.studio-page main .side-card.dark > a.btn-primary:link,
+.studio-page main .side-card.dark > a.btn-primary:visited,
+.studio-page main .side-card.dark > a.btn-primary:hover,
+.home-page .side-card.dark > a.btn-primary {
   background: #245cff !important;
   border: 1px solid #245cff !important;
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
 }
-.studio-page:not(.home-page) main .side-card.dark > .btn-primary *,
-.studio-page:not(.home-page) main .side-card.dark > .btn-primary .dot {
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
+.studio-page .sidebar .side-card.dark > a.btn-primary *,
+.studio-page main .side-card.dark > a.btn-primary *,
+.home-page .side-card.dark > a.btn-primary * {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
 }
-.studio-page:not(.home-page) main .side-card.dark > .btn-ghost,
-.studio-page:not(.home-page) main .side-card.dark > .btn-ghost:link,
-.studio-page:not(.home-page) main .side-card.dark > .btn-ghost:visited,
-.studio-page:not(.home-page) main .side-card.dark > .btn-ghost:hover,
-.studio-page:not(.home-page) main .side-card.dark > .btn-ghost:focus {
-  background: #ffffff !important;
+.studio-page .sidebar .side-card.dark > a.btn-ghost,
+.studio-page .sidebar .side-card.dark > a.btn-ghost:link,
+.studio-page .sidebar .side-card.dark > a.btn-ghost:visited,
+.studio-page .sidebar .side-card.dark > a.btn-ghost:hover,
+.studio-page main .side-card.dark > a.btn-ghost,
+.studio-page main .side-card.dark > a.btn-ghost:link,
+.studio-page main .side-card.dark > a.btn-ghost:visited,
+.studio-page main .side-card.dark > a.btn-ghost:hover,
+.home-page .side-card.dark > a.btn-ghost {
+  background: #fff !important;
   border: 1px solid #d0d9e8 !important;
   color: #172033 !important;
   -webkit-text-fill-color: #172033 !important;
 }
-.studio-page:not(.home-page) main .side-card.dark > .btn .sr-only {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0,0,0,0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
-}
 
-/* AUTHOR CARD CTA ROW: keep both buttons aligned and labels centered. */
-.studio-page:not(.home-page) main .author-box .btn-row {
+/* Author biography: avatar and heading share the same top alignment. */
+.studio-page main .author-box,
+.studio-page article .author-box {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 16px !important;
+  background: #0d1729 !important;
+  border: 1px solid #263a5d !important;
+  color: #f8fbff !important;
+}
+.studio-page main .author-box > .avatar,
+.studio-page article .author-box > .avatar {
+  display: grid !important;
+  place-items: center !important;
+  flex: 0 0 56px !important;
+  width: 56px !important;
+  height: 56px !important;
+  margin: 0 !important;
+  align-self: flex-start !important;
+}
+.studio-page main .author-box > div,
+.studio-page article .author-box > div {
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: #f8fbff !important;
+  -webkit-text-fill-color: #f8fbff !important;
+}
+.studio-page main .author-box h2,
+.studio-page main .author-box h3,
+.studio-page article .author-box h2,
+.studio-page article .author-box h3 {
+  margin: 0 0 .45rem !important;
+  padding: 0 !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  line-height: 1.25 !important;
+}
+.studio-page main .author-box p,
+.studio-page article .author-box p {
+  margin: 0 0 .8rem !important;
+  color: #dbe6f8 !important;
+  -webkit-text-fill-color: #dbe6f8 !important;
+}
+.studio-page main .author-box p a,
+.studio-page article .author-box p a {
+  color: #9fc1ff !important;
+  -webkit-text-fill-color: #9fc1ff !important;
+  text-decoration: underline !important;
+}
+.studio-page main .author-box .btn-row,
+.studio-page article .author-box .btn-row {
   display: flex !important;
   flex-direction: row !important;
   flex-wrap: wrap !important;
@@ -1671,7 +1659,8 @@ html,body.studio-page { background:#fff!important;color:#344054!important; }
   gap: 10px !important;
   margin-top: 12px !important;
 }
-.studio-page:not(.home-page) main .author-box .btn-row > .btn {
+.studio-page main .author-box .btn-row > .btn,
+.studio-page article .author-box .btn-row > .btn {
   display: inline-flex !important;
   width: auto !important;
   min-height: 40px !important;
@@ -1683,26 +1672,26 @@ html,body.studio-page { background:#fff!important;color:#344054!important; }
   padding: 10px 14px !important;
   text-align: center !important;
   line-height: 1.2 !important;
-  white-space: nowrap !important;
+  white-space: normal !important;
   font-weight: 750 !important;
   text-decoration: none !important;
 }
-.studio-page:not(.home-page) main .author-box .btn-fiverr {
+.studio-page main .author-box .btn-fiverr,
+.studio-page article .author-box .btn-fiverr {
   background: #edf2ff !important;
   border: 1px solid #cbd9fb !important;
   color: #1748d6 !important;
   -webkit-text-fill-color: #1748d6 !important;
 }
-.studio-page:not(.home-page) main .author-box .btn-ghost {
-  background: #ffffff !important;
+.studio-page main .author-box .btn-ghost,
+.studio-page article .author-box .btn-ghost {
+  background: #fff !important;
   border: 1px solid #cfd8e8 !important;
   color: #172033 !important;
   -webkit-text-fill-color: #172033 !important;
 }
-.studio-page:not(.home-page) main .author-box .btn-row .dot {
-  flex: 0 0 9px !important;
-}
-.studio-page:not(.home-page) main .author-box .btn-row .sr-only {
+.studio-page .author-box .sr-only,
+.studio-page .side-card.dark .sr-only {
   position: absolute !important;
   width: 1px !important;
   height: 1px !important;
@@ -1714,92 +1703,20 @@ html,body.studio-page { background:#fff!important;color:#344054!important; }
   border: 0 !important;
 }
 
-/* FINAL BLOG SIDEBAR + AUTHOR ALIGNMENT FIX.
-   Scope to .sidebar because the service card lives inside <aside>, not the article column. */
-.studio-page:not(.home-page) .sidebar .side-card.dark {
-  background: #0d1730 !important;
-  background-image: linear-gradient(160deg,#0d1730,#162d66) !important;
-  border: 1px solid #263a5d !important;
-  color: #e5edff !important;
+@media (max-width: 520px) {
+  .studio-page main .author-box,
+  .studio-page article .author-box {
+    gap: 12px !important;
+    padding: 18px !important;
+  }
+  .studio-page main .author-box > .avatar,
+  .studio-page article .author-box > .avatar {
+    flex-basis: 48px !important;
+    width: 48px !important;
+    height: 48px !important;
+  }
+  .studio-page main .author-box .btn-row > .btn,
+  .studio-page article .author-box .btn-row > .btn {
+    white-space: normal !important;
+  }
 }
-.studio-page:not(.home-page) .sidebar .side-card.dark h2,
-.studio-page:not(.home-page) .sidebar .side-card.dark h3 {
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-  opacity: 1 !important;
-}
-.studio-page:not(.home-page) .sidebar .side-card.dark p {
-  color: #e5edff !important;
-  -webkit-text-fill-color: #e5edff !important;
-  opacity: 1 !important;
-}
-.studio-page:not(.home-page) .sidebar .side-card.dark > a.btn {
-  display: flex !important;
-  width: 100% !important;
-  min-height: 46px !important;
-  margin: 10px 0 0 !important;
-  padding: 12px 16px !important;
-  box-sizing: border-box !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 9px !important;
-  border-radius: 10px !important;
-  font-size: .92rem !important;
-  font-weight: 750 !important;
-  line-height: 1.2 !important;
-  text-align: center !important;
-  text-decoration: none !important;
-  white-space: nowrap !important;
-}
-.studio-page:not(.home-page) .sidebar .side-card.dark > a.btn-primary,
-.studio-page:not(.home-page) .sidebar .side-card.dark > a.btn-primary:link,
-.studio-page:not(.home-page) .sidebar .side-card.dark > a.btn-primary:visited,
-.studio-page:not(.home-page) .sidebar .side-card.dark > a.btn-primary:hover {
-  background: #245cff !important;
-  border: 1px solid #245cff !important;
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-}
-.studio-page:not(.home-page) .sidebar .side-card.dark > a.btn-primary * {
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-}
-.studio-page:not(.home-page) .sidebar .side-card.dark > a.btn-ghost,
-.studio-page:not(.home-page) .sidebar .side-card.dark > a.btn-ghost:link,
-.studio-page:not(.home-page) .sidebar .side-card.dark > a.btn-ghost:visited,
-.studio-page:not(.home-page) .sidebar .side-card.dark > a.btn-ghost:hover {
-  background: #ffffff !important;
-  border: 1px solid #d0d9e8 !important;
-  color: #172033 !important;
-  -webkit-text-fill-color: #172033 !important;
-}
-.studio-page:not(.home-page) .sidebar .side-card.dark > a.btn .sr-only {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  overflow: hidden !important;
-  clip: rect(0,0,0,0) !important;
-  white-space: nowrap !important;
-}
-
-/* Put the author avatar level with the heading, not above a heading's default top margin. */
-.studio-page:not(.home-page) main .author-box {
-  align-items: flex-start !important;
-}
-.studio-page:not(.home-page) main .author-box > .avatar {
-  flex: 0 0 56px !important;
-  margin: 0 !important;
-  align-self: flex-start !important;
-}
-.studio-page:not(.home-page) main .author-box > div {
-  min-width: 0 !important;
-  flex: 1 1 auto !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-.studio-page:not(.home-page) main .author-box > div > h2 {
-  margin: 0 0 .45rem !important;
-  padding: 0 !important;
-  line-height: 1.25 !important;
-}
-
