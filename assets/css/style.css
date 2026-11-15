@@ -1549,3 +1549,30 @@ html,body.studio-page { background:#fff!important;color:#344054!important; }
   opacity: 1 !important;
 }
 
+/* BLOG CALLOUT FINAL OVERRIDE: force readable text on the dark author/service panel. */
+.studio-page:not(.home-page) main .side-card.dark > h2,
+.studio-page:not(.home-page) main .side-card.dark > h3,
+.studio-page:not(.home-page) main .side-card.dark > p,
+.studio-page:not(.home-page) main .side-card.dark > ul,
+.studio-page:not(.home-page) main .side-card.dark > ul li,
+.studio-page:not(.home-page) main .side-card.dark > a:not(.btn) {
+  color: #f8fbff !important;
+  -webkit-text-fill-color: #f8fbff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  text-shadow: none !important;
+}
+.studio-page:not(.home-page) main .side-card.dark > h2,
+.studio-page:not(.home-page) main .side-card.dark > h3 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+.studio-page:not(.home-page) main .side-card.dark > p {
+  color: #dbe6f8 !important;
+  -webkit-text-fill-color: #dbe6f8 !important;
+}
+.studio-page:not(.home-page) main .side-card.dark > a:not(.btn) {
+  color: #9fc1ff !important;
+  -webkit-text-fill-color: #9fc1ff !important;
+}
+
