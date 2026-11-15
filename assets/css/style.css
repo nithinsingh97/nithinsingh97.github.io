@@ -1607,3 +1607,110 @@ html,body.studio-page { background:#fff!important;color:#344054!important; }
   text-decoration: underline !important;
 }
 
+/* BLOG SIDEBAR CTA: consistent button contrast, sizing and label alignment. */
+.studio-page:not(.home-page) main .side-card.dark > .btn {
+  display: flex !important;
+  width: 100% !important;
+  min-height: 46px !important;
+  box-sizing: border-box !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  margin: 10px 0 0 !important;
+  padding: 12px 16px !important;
+  text-align: center !important;
+  line-height: 1.25 !important;
+  white-space: normal !important;
+  font-weight: 750 !important;
+  text-decoration: none !important;
+}
+.studio-page:not(.home-page) main .side-card.dark > .btn-primary,
+.studio-page:not(.home-page) main .side-card.dark > .btn-primary:link,
+.studio-page:not(.home-page) main .side-card.dark > .btn-primary:visited,
+.studio-page:not(.home-page) main .side-card.dark > .btn-primary:hover,
+.studio-page:not(.home-page) main .side-card.dark > .btn-primary:focus {
+  background: #245cff !important;
+  border: 1px solid #245cff !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+.studio-page:not(.home-page) main .side-card.dark > .btn-primary *,
+.studio-page:not(.home-page) main .side-card.dark > .btn-primary .dot {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+.studio-page:not(.home-page) main .side-card.dark > .btn-ghost,
+.studio-page:not(.home-page) main .side-card.dark > .btn-ghost:link,
+.studio-page:not(.home-page) main .side-card.dark > .btn-ghost:visited,
+.studio-page:not(.home-page) main .side-card.dark > .btn-ghost:hover,
+.studio-page:not(.home-page) main .side-card.dark > .btn-ghost:focus {
+  background: #ffffff !important;
+  border: 1px solid #d0d9e8 !important;
+  color: #172033 !important;
+  -webkit-text-fill-color: #172033 !important;
+}
+.studio-page:not(.home-page) main .side-card.dark > .btn .sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0,0,0,0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* AUTHOR CARD CTA ROW: keep both buttons aligned and labels centered. */
+.studio-page:not(.home-page) main .author-box .btn-row {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 10px !important;
+  margin-top: 12px !important;
+}
+.studio-page:not(.home-page) main .author-box .btn-row > .btn {
+  display: inline-flex !important;
+  width: auto !important;
+  min-height: 40px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 10px 14px !important;
+  text-align: center !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+  font-weight: 750 !important;
+  text-decoration: none !important;
+}
+.studio-page:not(.home-page) main .author-box .btn-fiverr {
+  background: #edf2ff !important;
+  border: 1px solid #cbd9fb !important;
+  color: #1748d6 !important;
+  -webkit-text-fill-color: #1748d6 !important;
+}
+.studio-page:not(.home-page) main .author-box .btn-ghost {
+  background: #ffffff !important;
+  border: 1px solid #cfd8e8 !important;
+  color: #172033 !important;
+  -webkit-text-fill-color: #172033 !important;
+}
+.studio-page:not(.home-page) main .author-box .btn-row .dot {
+  flex: 0 0 9px !important;
+}
+.studio-page:not(.home-page) main .author-box .btn-row .sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0,0,0,0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
