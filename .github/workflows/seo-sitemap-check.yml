@@ -27,7 +27,6 @@ jobs:
           root_dir = Path(".")
           sitemap_path = root_dir / "sitemap.xml"
           namespace = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
-          expected_origin = "https://nithinsingh97.github.io"
 
           if not sitemap_path.is_file():
               raise SystemExit("ERROR: sitemap.xml is missing")
@@ -73,7 +72,7 @@ jobs:
 
               html = page_path.read_text(encoding="utf-8")
               canonical_match = re.search(
-                  r'<link\\s+rel=["\\']canonical["\\']\\s+href=["\\']([^"\\']+)',
+                  r'<link\s+rel=["\\']canonical["\\']\s+href=["\\']([^"\\']+)',
                   html,
                   flags=re.IGNORECASE
               )
@@ -85,7 +84,7 @@ jobs:
                   )
 
               robots_match = re.search(
-                  r'<meta\\s+name=["\\']robots["\\']\\s+content=["\\']([^"\\']+)',
+                  r'<meta\s+name=["\\']robots["\\']\s+content=["\\']([^"\\']+)',
                   html,
                   flags=re.IGNORECASE
               )
@@ -94,7 +93,7 @@ jobs:
 
           print(f"Validated {len(seen)} unique sitemap URLs.")
           if errors:
-              print("\\n".join(f"ERROR: {item}" for item in errors))
+              print("\n".join(f"ERROR: {item}" for item in errors))
               raise SystemExit(1)
 
           print("PASS: XML is valid; sitemap URLs map to files with matching canonicals.")
