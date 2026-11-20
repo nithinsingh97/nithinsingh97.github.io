@@ -1,0 +1,100 @@
+name: SEO sitemap validation
+
+on:
+  push:
+    branches: [main, "seo/**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate sitemap URLs and canonicals
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from urllib.parse import urlparse
+          import re
+          import xml.etree.ElementTree as ET
+
+          root_dir = Path(".")
+          sitemap_path = root_dir / "sitemap.xml"
+          namespace = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+
+          if not sitemap_path.is_file():
+              raise SystemExit("ERROR: sitemap.xml is missing")
+
+          try:
+              sitemap = ET.parse(sitemap_path).getroot()
+          except ET.ParseError as exc:
+              raise SystemExit(f"ERROR: sitemap.xml is invalid XML: {exc}")
+
+          entries = sitemap.findall("sm:url", namespace)
+          if not entries:
+              raise SystemExit("ERROR: sitemap contains no URL entries")
+
+          seen = set()
+          errors = []
+
+          for entry in entries:
+              loc_node = entry.find("sm:loc", namespace)
+              if loc_node is None or not loc_node.text:
+                  errors.append("A sitemap URL entry has no <loc>")
+                  continue
+
+              url = loc_node.text.strip()
+              parsed = urlparse(url)
+
+              if parsed.scheme != "https" or parsed.netloc != "nithinsingh97.github.io":
+                  errors.append(f"Unexpected sitemap host or scheme: {url}")
+                  continue
+
+              if url in seen:
+                  errors.append(f"Duplicate sitemap URL: {url}")
+                  continue
+              seen.add(url)
+
+              relative = parsed.path.lstrip("/") or "index.html"
+              if relative.endswith("/"):
+                  relative += "index.html"
+
+              page_path = root_dir / relative
+              if not page_path.is_file():
+                  errors.append(f"URL has no matching file in repository: {url}")
+                  continue
+
+              html = page_path.read_text(encoding="utf-8")
+              canonical_match = re.search(
+                  r"""<link\s+rel=["']canonical["']\s+href=["']([^"']+)""",
+                  html,
+                  flags=re.IGNORECASE
+              )
+              if not canonical_match:
+                  errors.append(f"Missing canonical tag: {relative}")
+              elif canonical_match.group(1).rstrip("/") != url.rstrip("/"):
+                  errors.append(
+                      f"Canonical mismatch in {relative}: {canonical_match.group(1)} != {url}"
+                  )
+
+              robots_match = re.search(
+                  r"""<meta\s+name=["']robots["']\s+content=["']([^"']+)""",
+                  html,
+                  flags=re.IGNORECASE
+              )
+              if robots_match and "noindex" in robots_match.group(1).lower():
+                  errors.append(f"Noindex page is listed in sitemap: {relative}")
+
+          print(f"Validated {len(seen)} unique sitemap URLs.")
+          if errors:
+              print("\n".join(f"ERROR: {item}" for item in errors))
+              raise SystemExit(1)
+
+          print("PASS: XML is valid; sitemap URLs map to files with matching canonicals.")
+          PY
