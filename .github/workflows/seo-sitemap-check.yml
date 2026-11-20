@@ -72,7 +72,7 @@ jobs:
 
               html = page_path.read_text(encoding="utf-8")
               canonical_match = re.search(
-                  r'<link\s+rel=["\\']canonical["\\']\s+href=["\\']([^"\\']+)',
+                  r"""<link\s+rel=["']canonical["']\s+href=["']([^"']+)""",
                   html,
                   flags=re.IGNORECASE
               )
@@ -84,7 +84,7 @@ jobs:
                   )
 
               robots_match = re.search(
-                  r'<meta\s+name=["\\']robots["\\']\s+content=["\\']([^"\\']+)',
+                  r"""<meta\s+name=["']robots["']\s+content=["']([^"']+)""",
                   html,
                   flags=re.IGNORECASE
               )
